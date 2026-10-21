@@ -1,0 +1,13 @@
+[wsl2]
+memory=48GB
+swap=24GB
+networkingMode=mirrored
+dnsTunneling=true
+autoProxy=true
+vmIdleTimeout=-1
+
+[experimental]
+hostAddressLoopback=true
+
+[general]
+instanceIdleTimeout=-1
