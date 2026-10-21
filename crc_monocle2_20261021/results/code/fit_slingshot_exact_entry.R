@@ -1,0 +1,22 @@
+# Same frozen engine/config/cells; only the exact projection search is indexed.
+entry_args=commandArgs(TRUE)
+stopifnot(length(entry_args)==6L,entry_args[6]=='Slingshot')
+entry_root=normalizePath(file.path(entry_args[1],'../..'))
+suppressPackageStartupMessages({
+ library(igraph);library(Rcpp);library(monocle)
+ library(data.table);library(jsonlite);library(Matrix);library(slingshot)
+})
+source(file.path(entry_root,'results/code/exact_projection_acceleration.R'))
+entry_accelerator=make_exact_projection_accelerator(entry_root,min_vertices=1000L,
+  audit_file=file.path(entry_args[4],'Slingshot_exact_projection_audit.json'))
+entry_binding=entry_accelerator$install()
+write_json(list(version='Slingshot_exact_search_v3',binding=entry_binding,
+  all_cells_retained=TRUE,all_curve_vertices_retained=TRUE,
+  original_engine='work/fit_generated.R',fitting_parameters_changed=FALSE,
+  min_vertices_for_index=1000L,reference_package=as.character(packageVersion('princurve'))),
+  file.path(entry_args[4],'Slingshot_exact_runtime.json'),pretty=TRUE,auto_unbox=TRUE)
+source(file.path(entry_root,'work/fit_generated.R'),local=globalenv())
+write_json(entry_accelerator$audit(),file.path(entry_args[4],'Slingshot_exact_projection_audit.json'),
+           pretty=TRUE,auto_unbox=TRUE,digits=NA)
+writeLines(capture.output(sessionInfo()),file.path(entry_args[4],'Slingshot_exact_final_session.txt'))
+entry_accelerator$uninstall()
