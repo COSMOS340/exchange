@@ -2,6 +2,7 @@
 
 This does not fit models, replace independent validation, or approve unseen images.
 """
+import csv
 import datetime
 import hashlib
 import json
@@ -98,6 +99,16 @@ def main():
     warnings = read('warning_review.json')
     assert warnings['status'] == 'reviewed_with_limitations'
     assert warnings['Slingshot']['status'] == 'reviewed_with_limitations'
+    sensitivity_path = ROOT / 'results/02_表格/CRC/topology_sensitivity.csv'
+    with sensitivity_path.open() as stream:
+        sensitivity = list(csv.DictReader(stream))
+    assert len(sensitivity) == 9
+    leaveouts = [row for row in sensitivity if row['comparison'].startswith('leave_out_')]
+    failures = [row for row in leaveouts if not row['edge_Jaccard']]
+    assert len(leaveouts) == 8
+    assert len(leaveouts) - len(failures) == warnings['MST_sensitivity']['leave_cohort_computable']
+    assert [row['comparison'] for row in failures] == ['leave_out_' + warnings['MST_sensitivity']['unassessable_cohort']]
+    assert all(row['detail'] for row in failures)
     visual = read('visual_audit.json')
     assert visual['status'] == 'passed_all_actual_visual_reviews_bound_to_files'
     actual = {str(p.relative_to(ROOT / 'results'))
@@ -113,17 +124,23 @@ def main():
     report = dict(
         updated_at=datetime.datetime.now().astimezone().isoformat(),
         whole_workflow_accepted=True,
+        status='accepted_local_core_with_documented_warnings_and_one_unassessable_MST_leaveout',
         acceptance_scope='Local computational and visual delivery, with documented native warnings; Mac reception review remains separate',
         cells=150917, Monocle2=monocle, Slingshot=slingshot,
         total_method_root_paths=expected_paths, cross_method_path_pairs=expected_pairs,
         full_pool_score_max_error=scores['scores']['score_max_error'],
         png_count=visual['png_count'], pdf_count=visual['pdf_count'],
         pdf_pages_actually_reviewed=visual['pdf_page_count'],
+        MST_sensitivity=dict(comparisons=9, leave_cohort_attempts=8,
+                             successful_leaveouts=len(leaveouts)-len(failures),
+                             all_sensitivity_checks_passed=not failures,
+                             unassessable_rows=failures,
+                             table_sha256=digest(sensitivity_path)),
         source_check_report_sha256=reports,
         limitations=['Native dispersion/kmeans warnings and nonmonotonic DDRTree objective reviewed; no global optimum claim',
                      'Slingshot exact segment index validated against native software fixtures; full CRC native baseline did not finish, so full-fit native equality is unavailable',
                      'Reported patient labels are not verified independent patient identities; descriptive results only',
-                     'MST sensitivity uses inherited representations without refitting Harmony or curves',
+                     'MST sensitivity uses inherited representations without refitting Harmony or curves; GSE178341 leaveout covariance was singular and is retained as unassessable, not passed',
                      'No new significance tests or causal/clinical conclusions'],
         pending=[])
     (LOG / 'numeric_acceptance.json').write_text(
