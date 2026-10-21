@@ -6,6 +6,7 @@ dist/
 WORK_MANIFEST.json
 __pycache__/
 _local_build_handoff.py
+_upload_direct.py
 publication_check.json
 upload_verification.json
 *.pyc
