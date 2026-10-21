@@ -31,10 +31,16 @@ def main():
                  'root_fallback_synthetic_validation.json',
                  'graph_compatibility.json',
                  'exact_projection_synthetic_validation.json',
-                 'exact_entry_e2e_validation.json']:
+                 'exact_entry_e2e_validation.json',
+                 'final_provenance.json']:
         report = read(name)
         assert report['passed'], name
         reports[name] = digest(LOG / name)
+    provenance = read('final_provenance.json')
+    assert provenance['original_Monocle2_object_bytes_unchanged']
+    assert not provenance['tracked_worktree_status']
+    for path, expected in provenance['source_sha256'].items():
+        assert digest(ROOT / path) == expected, path
     archive = read('input_archive_verification.json')
     assert archive['archive_hash_passed'] and archive['zip_crc_passed']
     source = read('frozen_source_to_work_comparison.json')
@@ -48,6 +54,18 @@ def main():
     for name in ['input_archive_verification.json',
                  'frozen_source_to_work_comparison.json',
                  'exact_projection_software_binding.json']:
+        reports[name] = digest(LOG / name)
+    fit_binding = read('Slingshot_binding.json')
+    assert fit_binding['original_cells_and_curve_vertices_retained']
+    assert not fit_binding['fitting_parameters_changed']
+    for path, expected in fit_binding['source_sha256'].items():
+        assert digest(ROOT / path) == expected, path
+    projection = read('Slingshot_exact_projection_audit.json')
+    assert projection and all(call['input_rows_retained'] == 150917 for call in projection)
+    assert all(call['curve_vertices_retained'] >= 1000 for call in projection)
+    assert all(0 < call['evaluated_segment_pairs'] <= call['full_enumeration_pairs']
+               for call in projection)
+    for name in ['Slingshot_binding.json', 'Slingshot_exact_projection_audit.json']:
         reports[name] = digest(LOG / name)
     monocle = read('Monocle2_independent_validation.json')
     slingshot = read('Slingshot_independent_validation.json')
