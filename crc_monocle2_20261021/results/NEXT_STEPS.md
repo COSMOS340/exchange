@@ -4,6 +4,8 @@ WSL重启已验证生效，不需要再次重启或重做prepare。Monocle2第�
 
 Slingshot第二轮正在原始30维Harmony上拟合150,917细胞，先读取Slingshot_local_process.json、CRC_Slingshot_progress.json和console；核对进程目录，勿重复启动。第一轮缺失依赖已归档，环境v2只添加DelayedMatrixStats及sparseMatrixStats，原模型版本不变。运行时间长不等于卡死。
 
+`finish_saved_postprocess.py`现已运行并等待该拟合正常退出；它持有单独的后处理锁。读取`saved_postprocess_progress.json`及其中精确命令/退出记录，勿另起相同后处理。拟合结束后它会串行取得fit.lock，再核验真实Slingshot对象、运行MST敏感性、生成Slingshot图/动态、独立复算全路径配对并渲染PDF。任何失败即停止并保留日志，绝不重启拟合。即使入口退出0，新增PNG和每页PDF的实际人工视觉审核仍需执行；它不会自动宣称视觉通过或发布。
+
 后续依次完成Slingshot保存对象验证/UMAP展示、MST敏感性、功能分箱动态与独立复算，再逐张PNG/逐页PDF审阅新增图。更新RUN_SUMMARY与全套验收JSON，然后提交必要小代码及摘要、打包新的完整结果版本。尚未全分析验收或发布最终结果Release。
 
 不要覆盖既有模型/准备结果/旧失败日志；大对象不加入git。未核实患者链接只影响主体标签汇总，不能删拟合细胞；保持CNV冻结值、全部细胞、原生算法及既定参数。
