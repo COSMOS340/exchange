@@ -10,6 +10,8 @@
 - `score_functions_crc.py`：全部CRC池的六套固定基因集评分，使用原生`nCount_input`分母及总体标准差；稀疏分批读取只用于I/O，不拆模型。已完成。
 - `dynamics_crc.py`：每路径12箱，按建库>=10细胞、建库/标本/有支持报告标签逐层等权；不足3标签留空。缺少患者链接的标本另图。`--method Monocle2`与`--method Slingshot`可分别后处理保存对象，两者齐备后生成全路径配对及合并表。Monocle2的8条路径已完成，16组PNG/PDF均已实际查看；Slingshot等待其正式拟合保存。
 - `validate_postprocess_crc.py`：独立的CSC密集面板算术及NumPy factorization/add.at汇总。`--stage scores-and-compositions`已在全部150,917细胞通过，最大评分差5.44e-15；`--stage dynamics --method Monocle2`已核验8条路径的分箱、逐层权重、空箱规则和标签内首末观测变化。`--stage dynamics`最终核验全方法路径配对，包括低覆盖配对，不挑最大相关。
+- `validate_cnv_exports.py`：逐行比较冻结CNV十进制文本与三组指示值；150,917细胞导出值完全一致，最大十进制差0。冻结元数据及基因去向的原文件副本另存表格目录并逐字节核验。
+- `inspect_slingshot_initial_mst.R`：轻量MST初始化诊断，所有150,917细胞和30维Harmony、两个起点各10条候选路径；不执行曲线拟合。原生初始化投影工作量可达数百亿点段配对，不能把150曲线点参数当150个拟合细胞。
 - `check_slingshot_environment.R`：120个合成细胞的getLineages/getCurves/embedCurves/PT/权重/MST接口检查，已通过。
 - `validate_slingshot_saved.R`：尚待正式Slingshot对象保存后执行；验证30维Harmony、全部权重/NA、元数据对应、导出曲线和UMAP投影前后拟时序与权重一致。
 - `plot_slingshot_crc.py`：尚待执行，只展示正式embedCurves保存的UMAP曲线与全部细胞。
@@ -29,3 +31,5 @@ Slingshot首轮因缺DelayedMatrixStats退出。环境v2只添加`DelayedMatrixS
 原生Monocle2内部`reduceDimension`设置seed2016；配置seed20261020不是所有底层随机数的证明。原生离散度非收敛与kmeans最大步数警告没有隐藏；目标函数5项、两次上升，末次相对变化6.412e-5满足原生tol0.001停止条件，但不证明全局最优。完整判断与限制见`warning_review.json`。
 
 igraph源码：https://cran.r-project.org/src/contrib/Archive/igraph/igraph_2.2.2.tar.gz 。源码SHA、实际环境和所有修复记录见日志；本目录不存输入、大型模型、认证令牌或系统密钥。
+
+后处理Harmony/PCA读取显式声明`header=TRUE`，避免数字列名0..29被自动识别为一行数据。已保留轻量诊断首轮失败与修复记录，重读150,917×30成功；正式生成R引擎原本已显式声明表头，其SHA与拟合绑定保持不变。

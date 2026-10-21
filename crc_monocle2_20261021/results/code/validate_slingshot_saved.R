@@ -2,7 +2,7 @@
 suppressPackageStartupMessages({library(slingshot);library(igraph);library(data.table);library(jsonlite)})
 root=normalizePath(commandArgs(TRUE)[1]);tab=file.path(root,'results/02_表格/CRC');log=file.path(root,'results/04_日志和检查')
 m=as.data.frame(fread(file.path(root,'work/CRC/metadata.csv.gz')))
-h=as.matrix(fread(file.path(root,'work/CRC/Harmony.csv')));rownames(h)=m$cell_id
+h=as.matrix(fread(file.path(root,'work/CRC/Harmony.csv'),header=TRUE));rownames(h)=m$cell_id
 cfg=fromJSON(file.path(root,'work/analysis_request.json'))
 checks=list()
 for(orientation in c('primary','alternative')){
