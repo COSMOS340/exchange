@@ -1,5 +1,11 @@
 # CRC上皮Monocle2：PC计算交接
 
+## PC最新交付状态（2026-10-22）
+
+本轮全量计算和本地验收已完成，结果已公开发布：[结果Release](https://github.com/COSMOS340/exchange/releases/tag/crc-monocle2-pc-results-v3-20261022)、[完成状态与接收说明](PC_RETURN_STATUS.md)、[远端附件核验回执](PUBLICATION_RECEIPT.json)。保留拟合警告，1项队列留出MST诊断不可评估；Mac接收复核仍待执行。
+
+以下是原始交接说明，保留用于追溯；其中“尚未运行”等历史状态不代表当前PC结果状态。结果包内状态文件同样保留打包时快照。
+
 这是用于哥哥64GB PC的计算交接包。输入与代码准备完成不等于拟时序分析完成。Mac端未运行本包的正式准备或拟合。
 
 ## 接手顺序

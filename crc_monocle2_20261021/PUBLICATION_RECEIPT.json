@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "repository": "COSMOS340/exchange",
+  "tag": "crc-monocle2-pc-results-v3-20261022",
+  "release_id": 419788958,
+  "release_url": "https://github.com/COSMOS340/exchange/releases/tag/crc-monocle2-pc-results-v3-20261022",
+  "code_commit": "4d8a13008e57dc5a30a6fb5b5fc1a48410151cce",
+  "draft": false,
+  "prerelease": false,
+  "published_at": "2026-10-21T16:42:47Z",
+  "verified_at": "2026-10-22T00:43:09.890577+08:00",
+  "asset_count": 6,
+  "all_remote_sizes_and_server_sha256_match": true,
+  "assets": [
+    {
+      "name": "results.zip.part001",
+      "bytes": 1610612736,
+      "sha256": "532dc26e536adb8bf1c235db6391f77e3ac270b04dd647535bf35dd6cf3e4e70",
+      "server_digest": "sha256:532dc26e536adb8bf1c235db6391f77e3ac270b04dd647535bf35dd6cf3e4e70",
+      "state": "uploaded",
+      "url": "https://github.com/COSMOS340/exchange/releases/download/crc-monocle2-pc-results-v3-20261022/results.zip.part001",
+      "asset_id": 663108616
+    },
+    {
+      "name": "results.zip.part002",
+      "bytes": 1610612736,
+      "sha256": "baabfe3eb48970c21a3a8051e4e27dd191cda22290d2a6af761c59bd828aec75",
+      "server_digest": "sha256:baabfe3eb48970c21a3a8051e4e27dd191cda22290d2a6af761c59bd828aec75",
+      "state": "uploaded",
+      "url": "https://github.com/COSMOS340/exchange/releases/download/crc-monocle2-pc-results-v3-20261022/results.zip.part002",
+      "asset_id": 663128030
+    },
+    {
+      "name": "results.zip.part003",
+      "bytes": 954356669,
+      "sha256": "27e9064346631270ebb1f3e0c8fda4ce47bf376f41161c05db5ff72744142b4a",
+      "server_digest": "sha256:27e9064346631270ebb1f3e0c8fda4ce47bf376f41161c05db5ff72744142b4a",
+      "state": "uploaded",
+      "url": "https://github.com/COSMOS340/exchange/releases/download/crc-monocle2-pc-results-v3-20261022/results.zip.part003",
+      "asset_id": 663142917
+    },
+    {
+      "name": "RETURN_MANIFEST.json",
+      "bytes": 805,
+      "sha256": "2fd6fcb3f40923a1c447fd2b5385bc30b6dd64d47418f1f26edd3623014ddaa5",
+      "server_digest": "sha256:2fd6fcb3f40923a1c447fd2b5385bc30b6dd64d47418f1f26edd3623014ddaa5",
+      "state": "uploaded",
+      "url": "https://github.com/COSMOS340/exchange/releases/download/crc-monocle2-pc-results-v3-20261022/RETURN_MANIFEST.json",
+      "asset_id": 663151815
+    },
+    {
+      "name": "RESULT_MANIFEST.json",
+      "bytes": 137781,
+      "sha256": "93093eab1c6f7aec3d3bc1f9119ba5d7e80cdca424683dc88e67f853182469fb",
+      "server_digest": "sha256:93093eab1c6f7aec3d3bc1f9119ba5d7e80cdca424683dc88e67f853182469fb",
+      "state": "uploaded",
+      "url": "https://github.com/COSMOS340/exchange/releases/download/crc-monocle2-pc-results-v3-20261022/RESULT_MANIFEST.json",
+      "asset_id": 663151956
+    },
+    {
+      "name": "RUN_SUMMARY.md",
+      "bytes": 10788,
+      "sha256": "b638cce3a404ea981564c7f4eb1564a3494a1887f61b60b61b7d89fe71075c2a",
+      "server_digest": "sha256:b638cce3a404ea981564c7f4eb1564a3494a1887f61b60b61b7d89fe71075c2a",
+      "state": "uploaded",
+      "url": "https://github.com/COSMOS340/exchange/releases/download/crc-monocle2-pc-results-v3-20261022/RUN_SUMMARY.md",
+      "asset_id": 663152120
+    }
+  ],
+  "tag_commit_verified": "4d8a13008e57dc5a30a6fb5b5fc1a48410151cce"
+}
