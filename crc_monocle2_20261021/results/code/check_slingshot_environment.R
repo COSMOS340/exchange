@@ -1,0 +1,22 @@
+# Synthetic compatibility fixture only; no biological data or downsampling.
+suppressPackageStartupMessages({library(slingshot);library(igraph);library(jsonlite)})
+root=normalizePath(commandArgs(TRUE)[1]);log=file.path(root,'results/04_日志和检查')
+stopifnot(as.character(packageVersion('monocle'))=='2.38.0',
+  as.character(packageVersion('DDRTree'))=='0.1.6',as.character(packageVersion('igraph'))=='2.2.2',
+  requireNamespace('DelayedMatrixStats',quietly=TRUE),requireNamespace('sparseMatrixStats',quietly=TRUE))
+set.seed(741)
+x=matrix(rnorm(120*5),120,5);x[,1]=x[,1]+rep(c(0,4,8),each=40);rownames(x)=paste0('synthetic_',1:120)
+labels=rep(c('A','B','C'),each=40)
+s=getLineages(x,clusterLabels=labels,start.clus='A')
+s=getCurves(s,maxit=2,approx_points=20)
+pt=slingPseudotime(s);weights=slingCurveWeights(s)
+projected=embedCurves(s,x[,1:2,drop=FALSE])
+stopifnot(identical(pt,slingPseudotime(projected)),nrow(pt)==120,nrow(weights)==120,
+  all(is.finite(weights)),nrow(as_data_frame(slingMST(s)))==2)
+write_json(list(passed=TRUE,synthetic_cells=120,biological_fit_performed=FALSE,
+  methods=c('getLineages','getCurves','embedCurves','slingPseudotime','slingCurveWeights','slingMST'),
+  projection_preserved_pseudotime=TRUE,Slingshot_version=as.character(packageVersion('slingshot')),
+  DelayedMatrixStats_version=as.character(packageVersion('DelayedMatrixStats')),
+  sparseMatrixStats_version=as.character(packageVersion('sparseMatrixStats'))),
+  file.path(log,'Slingshot_environment_v2_synthetic_validation.json'),pretty=TRUE,auto_unbox=TRUE)
+writeLines(capture.output(sessionInfo()),file.path(log,'Slingshot_environment_v2_session.txt'))

@@ -1,0 +1,3 @@
+@EXPLICIT
+https://conda.anaconda.org/bioconda/linux-64/bioconductor-sparsematrixstats-1.22.0-r45ha27e39d_0.conda#66f12ff5bd5cc7e687559edd69f29529
+https://conda.anaconda.org/bioconda/noarch/bioconductor-delayedmatrixstats-1.32.0-r45hdfd78af_0.conda#59fa181f225a7f9ee545b99e783f1926
