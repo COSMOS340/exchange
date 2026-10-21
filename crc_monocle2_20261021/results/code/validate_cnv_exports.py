@@ -12,7 +12,8 @@ original = {row['cell_id']: (row['cnv_abs_log2'], row['CNV_relative_band']) for 
 assert len(rows) == len(original) == 150917
 records = []
 for name in ['function_and_CNV_values.csv.gz', 'Monocle2_primary_cells.csv.gz',
-             'Monocle2_alternative_cells.csv.gz']:
+             'Monocle2_alternative_cells.csv.gz', 'Slingshot_primary_cells.csv.gz',
+             'Slingshot_alternative_cells.csv.gz']:
     cells = []
     maximum = Decimal(0)
     differences = 0
