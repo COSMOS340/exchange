@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-21",
+  "status": "local_handoff_checks_passed_not_a_completed_analysis",
+  "python_unit_tests_passed": 8,
+  "synthetic_complete_preparation_test": {"source_rows": 20, "CRC_rows": 12},
+  "synthetic_MST_cases_passed": 6,
+  "MST_checks": ["distinct_coordinates", "duplicate_coordinates", "grid_ties", "shifted_distances", "zero_edge_policy", "native_DFS_order_and_parent"],
+  "compatibility_installation_passed": true,
+  "real_model_root_distance_check": "pending_PC_fit",
+  "formal_biological_preparation_run_on_Mac": false,
+  "formal_biological_fitting_run_on_Mac": false,
+  "source_data_copies_SHA256_match": true,
+  "input_archive_ZIP_CRC_check_passed": true,
+  "main_CRC_metadata_count": 150917,
+  "code_secret_and_absolute_local_path_scan": "no_matches_in_publishable_code_and_docs",
+  "input_metadata_path_email_credential_pattern_scan": "no_matches",
+  "paper_PDF_or_credentials_included": false,
+  "data_manifest": "INPUT_MANIFEST.json",
+  "reference_manifest": "REFERENCE_MANIFEST.json",
+  "pending": ["PC_environment_validation", "full_cell_fits", "postprocessing_implementation", "numeric_and_visual_acceptance", "result_return"]
+}

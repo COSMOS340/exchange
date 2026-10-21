@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "small_tree_cases": {
+    "10 random": true,
+    "10 path": true,
+    "10 star": true,
+    "100 random": true,
+    "100 path": true,
+    "100 star": true,
+    "1000 random": true,
+    "1000 path": true,
+    "1000 star": true,
+    "4000 random": true,
+    "4000 path": true,
+    "4000 star": true
+  },
+  "actual_model_vertices": 4183,
+  "exact_native_order_parent": true,
+  "long_path_vertices": 100000,
+  "cell_sampling_in_formal_analysis": false
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "path": "Overall_Monocle2_generated.R",
+    "bytes": 24576,
+    "sha256": "26300dac35ab4a8577e9fe0a76daa8a5a57a18af8cb624c8664513c4dcb34198"
+  },
+  {
+    "path": "Overall_Monocle2_session.txt",
+    "bytes": 2032,
+    "sha256": "8072d39f9bb5b9926254f560e18214135371249dc8e92bb4a432d3ca205ba46d"
+  },
+  {
+    "path": "README.md",
+    "bytes": 1051,
+    "sha256": "ba669a5530bb77d4b5a405b3dd684258ae5722b3a3f8de16e9c4e12706bf3991"
+  },
+  {
+    "path": "all_library_count_checks.csv",
+    "bytes": 6030,
+    "sha256": "36b7239d79e461577ec2d32ed6a1cb6bca3b3a85c2193eb5ed20fac926a68ce0"
+  },
+  {
+    "path": "iterative_DFS_equivalence.json",
+    "bytes": 471,
+    "sha256": "882743e33282774251a24fba20677b4eaf9e45fcd6181bd7521962b277840f37"
+  },
+  {
+    "path": "monocle_Artistic-2.0.txt",
+    "bytes": 9073,
+    "sha256": "4cabb00406b10ab960d3ebb5c14e5042cf54d2b970cc4047588aa28c703525fe"
+  },
+  {
+    "path": "postprocessing_reference.py",
+    "bytes": 32498,
+    "sha256": "96bf0ff76592366740440e6176130d32d645ee37ef1fb3691b67d983855b9813"
+  },
+  {
+    "path": "preparation_validation.json",
+    "bytes": 133,
+    "sha256": "49763e014e34192fcd65ac0f6b4853cf05501a1d1cbb41fe08991e982fa3fa31"
+  }
+]
