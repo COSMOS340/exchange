@@ -14,6 +14,8 @@ def main():
     sub.add_parser('prepare')
     fit = sub.add_parser('fit')
     fit.add_argument('--method', choices=['Monocle2', 'Slingshot'], required=True)
+    pack = sub.add_parser('pack-return')
+    pack.add_argument('--label',required=True)
     args = parser.parse_args()
     if args.command == 'verify-input':
         from pipeline_common import verify_data
@@ -24,6 +26,9 @@ def main():
     elif args.command == 'fit':
         from run_fit_all import main as fit_main
         return fit_main(args.method)
+    elif args.command == 'pack-return':
+        from pack_return_all import pack_return
+        pack_return(args.label)
     return 0
 
 

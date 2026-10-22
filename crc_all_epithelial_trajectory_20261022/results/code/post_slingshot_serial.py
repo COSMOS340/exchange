@@ -25,6 +25,7 @@ def main():
            ('independent_all_path_dynamics',[py,'results/code/validate_postprocess_all.py','--stage','dynamics']),
            ('independent_actual_dynamic_gene_models',[py,'results/code/validate_dynamic_model_full.py']),
            ('dynamic_root_and_all_cohort_sensitivity',[py,'results/code/dynamic_sensitivity.py']),
+           ('dynamic_root_cohort_sensitivity_figures',[py,'results/code/plot_dynamic_sensitivity.py']),
            ('module_and_representative_all_path_sensitivity',[py,'results/code/module_path_dynamics.py']),
            ('MST_PCA_Harmony_and_all_cohort_sensitivity',[str(ENV/'bin/Rscript'),'results/code/topology_sensitivity.R',str(ROOT)])]
     report['status']='running_serial_postprocessing';save_json(record,report)

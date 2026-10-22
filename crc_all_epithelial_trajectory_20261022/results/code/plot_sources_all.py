@@ -115,7 +115,7 @@ def main():
             ax=axes[row,col]
             for source,d in profiles[profiles.identity.eq(identity)].groupby('source',sort=False):
                 x=(d.bin.to_numpy()+.5)/30
-                ax.plot(x,d['mean'],color=SOURCE_COLORS[source],lw=1.3,label=source)
+                ax.plot(x,d['mean'],color=SOURCE_COLORS[source],lw=1.3,marker='o',markersize=2.3,label=source)
                 ax.fill_between(x,d.q25,d.q75,color=SOURCE_COLORS[source],alpha=.15)
             ax.set(title=root+' | '+textwrap.fill(identity,36),xlabel='Scaled pseudotime',ylabel='Relative RNA CNV\nmean absolute log2',xlim=(0,1))
     for row in range(len(identities)):
