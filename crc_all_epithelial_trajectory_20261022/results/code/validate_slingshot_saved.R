@@ -8,6 +8,11 @@ checks=list()
 for(orientation in c('primary','alternative')){
   s=readRDS(file.path(root,'results/03_对象/AllEpithelial',paste0('Slingshot_',orientation,'.rds')))
   u=readRDS(file.path(root,'results/03_对象/AllEpithelial',paste0('Slingshot_',orientation,'_UMAP.rds')))
+  parameters=slingParams(s)
+  writeLines(capture.output(str(parameters,max.level=3)),file.path(log,paste0('Slingshot_',orientation,'_native_parameters.txt')))
+  stopifnot(parameters$maxit==30,parameters$approx_points==150,parameters$thresh==0.001,
+    parameters$stretch==2,identical(parameters$smoother,'smooth.spline'),
+    isTRUE(parameters$reweight),isTRUE(parameters$reassign),isTRUE(parameters$allow.breaks))
   pt=slingPseudotime(s);weights=slingCurveWeights(s)
   stopifnot(nrow(pt)==223736L,identical(rownames(pt),m$cell_id),all(is.finite(weights)),
     all(weights>=0),all(weights<=1+1e-12),identical(pt,slingPseudotime(u)),
@@ -37,6 +42,7 @@ for(orientation in c('primary','alternative')){
   requested=actual_references[[orientation]]
   lineages=slingLineages(s);stopifnot(all(vapply(lineages,function(x)x[1]==requested,logical(1))))
   checks[[orientation]]=list(cells=nrow(pt),dimensions=ncol(z),requested_root=requested,
+    native_curve_parameters=parameters[c('shrink','extend','reweight','reassign','thresh','maxit','stretch','approx_points','smoother','shrink.method','allow.breaks')],
     paths=ncol(pt),assigned_cells=sum(rowSums(is.finite(pt))>0),unassigned_cells=sum(rowSums(is.finite(pt))==0),
     pseudotime_export_max_error=max(errors),UMAP_curve_export_max_error=curve_error,
     UMAP_projection_preserves_pseudotime=TRUE,UMAP_projection_preserves_weights=TRUE,
