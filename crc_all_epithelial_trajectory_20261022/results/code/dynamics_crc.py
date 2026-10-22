@@ -31,7 +31,7 @@ def plot_path(summary, unsupported, key, coverage):
     for proxy in [False, True]:
         if proxy and unsupported.empty:
             continue
-        fig, axes = plt.subplots(4, 3, figsize=(15, 13), layout="constrained")
+        fig, axes = plt.subplots(5, 3, figsize=(15, 16), layout="constrained")
         x = (np.arange(12) + .5) / 12
         for ax, feature in zip(axes.flat, FEATURES):
             if proxy:
@@ -59,6 +59,21 @@ def plot_path(summary, unsupported, key, coverage):
             if not finite:
                 ax.text(.5, .5, "Insufficient supported coverage", ha="center", va="center",
                         transform=ax.transAxes, fontsize=8)
+        bin_coverage=pd.read_csv(UNITS / f'{key}_bin_coverage.csv')
+        for field,color,label in [('member_cells','#888888','All path-member cells'),('eligible_cells','#2C628A','Eligible capture-bin cells')]:
+            axes[4,0].plot(x,bin_coverage[field],marker='o',ms=2,color=color,label=label)
+        axes[4,0].set(title='Cells per fixed bin',ylabel='Cells')
+        for field,label in [('eligible_captures','Captures'),('eligible_specimens','Specimens'),('supported_reported_labels','Supported reported labels')]:
+            axes[4,1].plot(x,bin_coverage[field],marker='o',ms=2,label=label)
+        if proxy:
+            axes[4,1].plot(x,bin_coverage.unsupported_proxy_specimens,color='#AC5B43',ls='--',marker='o',ms=2,label='Unsupported proxy specimens')
+        axes[4,1].set(title='Contributing units per bin',ylabel='Count')
+        for field,label in [('member_datasets','All path-member cohorts'),('eligible_datasets','Eligible cohorts'),('supported_label_datasets','Supported-label cohorts')]:
+            axes[4,2].plot(x,bin_coverage[field],marker='o',ms=2,label=label)
+        axes[4,2].set(title='Contributing cohorts per bin',ylabel='Cohorts')
+        for ax in axes[4]:
+            ax.set(xlim=(0,1),xlabel='Within-path scaled pseudotime (0-1)')
+            ax.legend(frameon=False,fontsize=6)
         label = "Unsupported patient links: individual specimen means" if proxy else "Supported reported labels: equal-label mean and IQR"
         fig.suptitle(f"{key} | {label}\nEach library/bin needs >=10 cells; gaps are retained; descriptive only", fontsize=12)
         suffix = "proxy_specimens" if proxy else "supported_labels"
@@ -80,6 +95,7 @@ def plot_path(summary, unsupported, key, coverage):
             question="路径内CNV与表达活动在有覆盖支持的分箱中如何变化？", finding=finding,
             statistical_unit="individual proxy specimens" if proxy else "equal supported reported labels after equal library/specimen weighting",
             sources=[f"02_表格/AllEpithelial/dynamics/{key}_summary.csv",
+                     f"02_表格/AllEpithelial/dynamics/{key}_bin_coverage.csv",
                      f"02_表格/AllEpithelial/dynamics/{key}_specimen_bins.csv.gz",
                      f"02_表格/AllEpithelial/dynamics/{key}_reported_label_bins.csv.gz"], visual_review="pending"))
     return result
@@ -153,6 +169,19 @@ def main():
                 labels = grouped[FEATURES].mean().join(grouped.cells.sum().rename("cells")).join(
                     grouped.libraries.sum().rename("libraries")).join(grouped.size().rename("specimens")).reset_index()
                 labels.to_csv(UNITS / f"{key}_reported_label_bins.csv.gz", index=False)
+                bin_coverage=[]
+                for b in range(12):
+                    raw=frame[frame.bin.eq(b)];cap=eligible[eligible.bin.eq(b)]
+                    spec=specimens[specimens.bin.eq(b)];lab=labels[labels.bin.eq(b)]
+                    proxy=unsupported[unsupported.bin.eq(b)]
+                    bin_coverage.append(dict(bin=b,member_cells=len(raw),member_captures=raw.capture_id.nunique(),
+                        member_specimens=raw.specimen_id.nunique(),member_datasets=raw.dataset.nunique(),
+                        eligible_cells=int(cap.cells.sum()),eligible_captures=len(cap),eligible_specimens=len(spec),
+                        eligible_datasets=spec.dataset.nunique(),supported_reported_labels=len(lab),
+                        supported_label_cells=int(lab.cells.sum()),supported_label_captures=int(lab.libraries.sum()),
+                        supported_label_specimens=int(lab.specimens.sum()),supported_label_datasets=lab.dataset.nunique(),
+                        unsupported_proxy_specimens=len(proxy),unsupported_proxy_cells=int(proxy.cells.sum())))
+                pd.DataFrame(bin_coverage).to_csv(UNITS / f'{key}_bin_coverage.csv',index=False)
                 long = labels.melt(id_vars=labelkeys, value_vars=FEATURES, var_name="feature", value_name="value")
                 summary = long.groupby(["bin", "feature"], observed=True).value.agg(
                     raw_mean="mean", raw_q25=lambda x: x.quantile(.25), raw_q75=lambda x: x.quantile(.75), reported_labels="count")

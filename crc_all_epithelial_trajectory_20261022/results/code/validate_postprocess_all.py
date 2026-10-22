@@ -188,6 +188,19 @@ def validate_dynamics(metadata, values, methods=('Monocle2','Slingshot')):
         for column in ['cells','libraries']:
             totals=np.zeros(len(labels));np.add.at(totals,codes,supported[column].to_numpy());labels[column]=totals
         label_error=compare_units(labels,folder/f'{stem}_reported_label_bins.csv.gz',label_keys,FEATURES+['cells','libraries','specimens'])
+        bin_coverage=pd.read_csv(folder/f'{stem}_bin_coverage.csv').set_index('bin')
+        assert bin_coverage.index.tolist()==list(range(12))
+        for bin_id in range(12):
+            raw=frame[frame.bin.eq(bin_id)];cap=eligible[eligible.bin.eq(bin_id)]
+            spec=specimens[specimens.bin.eq(bin_id)];lab=labels[labels.bin.eq(bin_id)]
+            proxy=unsupported[unsupported.bin.eq(bin_id)]
+            expected=dict(member_cells=len(raw),member_captures=raw.capture_id.nunique(),
+                member_specimens=raw.specimen_id.nunique(),member_datasets=raw.dataset.nunique(),
+                eligible_cells=cap.cells.sum(),eligible_captures=len(cap),eligible_specimens=len(spec),eligible_datasets=spec.dataset.nunique(),
+                supported_reported_labels=len(lab),supported_label_cells=lab.cells.sum(),supported_label_captures=lab.libraries.sum(),
+                supported_label_specimens=lab.specimens.sum(),supported_label_datasets=lab.dataset.nunique(),
+                unsupported_proxy_specimens=len(proxy),unsupported_proxy_cells=proxy.cells.sum())
+            equal(bin_coverage.loc[bin_id,list(expected)],list(expected.values()))
         changes=pd.read_csv(TAB/f'{method}_within_reported_label_changes.csv.gz')
         changes=changes[changes.root.eq(root)&changes.path.eq(int(number))]
         checked_changes=0

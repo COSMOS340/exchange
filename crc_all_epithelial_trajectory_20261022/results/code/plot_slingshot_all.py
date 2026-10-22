@@ -25,8 +25,10 @@ for root in ['primary','alternative']:
     fig,ax=plt.subplots(figsize=(11,8),layout='constrained')
     ax.scatter(*xy[order].T,c=m.CNV_relative_band.map(palette).to_numpy()[order],
                s=.7,marker='o',linewidths=0,rasterized=True)
-    for number,curve in curves.groupby('path'):
-        ax.plot(curve.UMAP_1,curve.UMAP_2,lw=1.1,label=f'Path {number}')
+    curve_groups=list(curves.groupby('path'))
+    curve_palette=plt.get_cmap('tab20')
+    for i,(number,curve) in enumerate(curve_groups):
+        ax.plot(curve.UMAP_1,curve.UMAP_2,lw=1.1,color=curve_palette(i/max(1,len(curve_groups)-1)),label=f'Path {number}')
     handles,labels=ax.get_legend_handles_labels()
     handles += [Line2D([],[],marker='o',linestyle='',color=c,label=f'{b}: n={m.CNV_relative_band.eq(b).sum():,}') for b,c in palette.items()]
     ax.legend(handles=handles,loc='upper left',bbox_to_anchor=(1.01,1),frameon=False)

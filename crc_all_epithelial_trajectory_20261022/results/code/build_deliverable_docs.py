@@ -71,6 +71,7 @@ def main():
     sensitivity=read('dynamic_sensitivity_summary.json');model={}
     for root in ['primary','alternative']:model[root]=json.loads((TAB/f'dynamic_genes/Monocle2_{root}/dynamic_model_summary.json').read_text())
     go=pd.read_csv(TAB/'dynamic_genes/Monocle2_primary/dynamic_module_GO_BP_display.csv')
+    go_family=pd.read_csv(TAB/'dynamic_genes/Monocle2_primary/dynamic_module_GO_BP_full.csv',usecols=['p_value'])
     function=pd.read_csv(TAB/'function_gene_coverage.csv')
     summary=['# 全上皮共同轨迹：PC结果摘要','',
         'PC全量计算、独立数值核验和实际视觉检查已完成；完整返回包尚需单独传输核验/发布记录，Mac接收验收仍待执行。旧CRC-only结果与对象保留。','',
@@ -87,7 +88,7 @@ def main():
         '## D. 动态基因、模块与GO','']
     for root,m in model.items():summary.append(f'- {root}：{m["tested_genes"]:,}基因可测，{m["selected_genes"]:,}达到冻结q/幅度阈值；{m["observations"]:,}标本-bin观测，{m["specimens"]}个可提供标本内变化的标本、{m["linkage_clusters"]}报告/未知链接簇，{m["supported_bins"]}/30箱支持。完整229标本资格表保留。')
     summary += ['',f'完成：主根K=2模块（607/1,180基因），候选K=2..8全基因silhouette、整链接单位bootstrap10次；根选择交集{sensitivity["root_selection_overlap"]:,}基因、Jaccard={sensitivity["root_selection_Jaccard"]:.3f}；全部8队列留一、全部方法/根/路径的固定模块与代表基因敏感性保存。完整热图和两张全部成员放大图、所有基因/箱/GO全表可追溯。', '',
-        'GO背景11,902测量且检测合格基因，另有10,713 BP注释覆盖背景敏感性；47,948术语检验逐项独立复算通过。显示注释为：']
+        f'GO背景11,902测量且检测合格基因，另有10,713 BP注释覆盖背景敏感性；完整{len(go_family):,}模块/术语组合行，其中{int(go_family.p_value.notna().sum()):,}有限P值纳入BH，其余没有合格背景成员而记不可测。逐项独立复算通过。显示注释为：']
     for module,d in go.groupby('module'):summary.append('- '+module+'：'+'；'.join(d.term.tolist())+'。')
     summary += ['', '动态统计为条件于推断轨迹的标本内关联，未传播轨迹不确定性，也非细胞独立样本检验。GO不参与模块选择且不证明通路/蛋白活性或因果。','',
         '## E. 冻结六套Hallmark','',
