@@ -1,4 +1,6 @@
-a=commandArgs(TRUE);d=read.csv(a[1]);p=rep(NA_real_,nrow(d));ok=d$tested & is.finite(d$F_statistic)
+a=commandArgs(TRUE);d=read.csv(a[1]);p=rep(NA_real_,nrow(d))
+flag=tolower(trimws(as.character(d$tested)));stopifnot(all(flag %in% c('true','false','1','0')))
+ok=(flag %in% c('true','1')) & is.finite(d$F_statistic)
 p[ok]=pf(d$F_statistic[ok],5,as.integer(a[3]),lower.tail=FALSE)
 q=p;q[ok]=p.adjust(p[ok],method='BH')
 write.csv(data.frame(p_value=p,BH_q_value=q),a[2],row.names=FALSE)

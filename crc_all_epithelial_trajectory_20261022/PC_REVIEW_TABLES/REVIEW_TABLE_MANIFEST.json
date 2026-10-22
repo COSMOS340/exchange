@@ -1,0 +1,152 @@
+[
+  {
+    "path": "PC_REVIEW_TABLES/source_counts_by_dataset.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/source_counts_by_dataset.csv",
+    "bytes": 618,
+    "sha256": "7e96869f15c155683e74ca0a99153317afdb6d4d0a01e544c6cf3adbd64d9883"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/source_counts_by_capture_id.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/source_counts_by_capture_id.csv",
+    "bytes": 10908,
+    "sha256": "5e0ce0e9240a4ac0864c9a1ac95c2aaab05c4bf4c0ac5e9da62606011a7fba9b"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/source_counts_by_specimen_id.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/source_counts_by_specimen_id.csv",
+    "bytes": 9823,
+    "sha256": "d3908447a8a97e4b854ca4124ba6b81d8260449cf6a2d40f61bac4a10e20ba7c"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/Monocle2_roots.json",
+    "canonical_result_path": "results/02_表格/AllEpithelial/Monocle2_roots.json",
+    "bytes": 900,
+    "sha256": "98ac9df28f0fd2c34e650cd732568ce973ca10629c92b5280b223dfd798a6941"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/Monocle2_endpoint_root_coverage.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/Monocle2_endpoint_root_coverage.csv",
+    "bytes": 248,
+    "sha256": "027c1a5bf754d63dc60b31514ad5f359b145ba01aea239b9d917074e7602c7a7"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/Slingshot_actual_Monocle2_reference_groups.json",
+    "canonical_result_path": "results/02_表格/AllEpithelial/Slingshot_actual_Monocle2_reference_groups.json",
+    "bytes": 45,
+    "sha256": "dbfe3973a6a34934bee0dbfaec65706e384ecfcb999613e7b46cf6bcedabad6c"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/Slingshot_roots_and_paths.json",
+    "canonical_result_path": "results/02_表格/AllEpithelial/Slingshot_roots_and_paths.json",
+    "bytes": 1639,
+    "sha256": "d3c2e2d06631297c5fc72f219fb6a0ad03d3fb2e589a2726ef5bb9b132a9edf2"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/function_gene_coverage.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/function_gene_coverage.csv",
+    "bytes": 453,
+    "sha256": "70ca3e203b1fd748ba8de919efbfa8ed4fa25f710a2d8c622bc9176b07f6c473"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/Monocle2_path_coverage.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/Monocle2_path_coverage.csv",
+    "bytes": 813,
+    "sha256": "8e707f9f00aebdcd3d925c2f4213841e5f6827003fd45da07a2b5df92259c45b"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/Slingshot_path_coverage.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/Slingshot_path_coverage.csv",
+    "bytes": 1876,
+    "sha256": "7149b44215eeab1f0a7894b40068990a39c067976666b5556c9cffad0b185f0d"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/topology_sensitivity.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/topology_sensitivity.csv",
+    "bytes": 1235,
+    "sha256": "d7972be61db7520da242ae9887b168666f497a2d17b374659ad86ff3d4814e0b"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/CRC_only_comparison/all_four_root_comparisons.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/CRC_only_comparison/all_four_root_comparisons.csv",
+    "bytes": 447,
+    "sha256": "5e065fc21b7dfaf87182440634425f5c198d760b40fba25ee94eb4412e7330d2"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/CRC_only_comparison/all_path_pair_overlaps.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/CRC_only_comparison/all_path_pair_overlaps.csv",
+    "bytes": 4549,
+    "sha256": "b93f7d1dae8d26a6caf84dade6388c7daca0740a1568a9059876d15ff5f5214f"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/source_comparisons/shared_identity_source_coverage.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/source_comparisons/shared_identity_source_coverage.csv",
+    "bytes": 414,
+    "sha256": "435a8cb7820747e28c9344c1b4a956e4e746f3307baf62f037aa640749903b6a"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_primary/dynamic_module_k_selection_metrics.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_primary/dynamic_module_k_selection_metrics.csv",
+    "bytes": 535,
+    "sha256": "853a397b7080c698b9b2381821856fa969df6cf63d43fb4a8d7516f97a30313b"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_primary/dynamic_module_bootstrap_stability.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_primary/dynamic_module_bootstrap_stability.csv",
+    "bytes": 2258,
+    "sha256": "abc2c31e6b94795434740cb927b464e4410e8d27e0442b8fc53d83e6a7db0b7e"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_primary/dynamic_module_representative_genes.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_primary/dynamic_module_representative_genes.csv",
+    "bytes": 254,
+    "sha256": "a71552743ffde8d2d03df7395097d836ee3b3e6d3cd5cea039d5367f3268bfa5"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_primary/dynamic_module_GO_BP_display.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_primary/dynamic_module_GO_BP_display.csv",
+    "bytes": 15867,
+    "sha256": "c537af4183f9f50edbd868ee29bdb4a7d9185513d294ea3153c0e87f78660615"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_primary/dynamic_GO_background_coverage.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_primary/dynamic_GO_background_coverage.csv",
+    "bytes": 220,
+    "sha256": "e55668fcff87800b18c99e3dff419a022ff2b7d645dc0e70eb011025c20b8cbe"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_primary/dynamic_model_summary.json",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_primary/dynamic_model_summary.json",
+    "bytes": 636,
+    "sha256": "4654d71f71136647ec880d01c61a985990876ad792f5c094bcedeb9e9b5afc49"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_alternative/dynamic_model_summary.json",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_alternative/dynamic_model_summary.json",
+    "bytes": 639,
+    "sha256": "b59df760bbcb09e1e5890218692be7c37a6a8f49a8d16c9eab38c0f61cd5fd7b"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_primary_all_specimen_coverage.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_primary_all_specimen_coverage.csv",
+    "bytes": 29173,
+    "sha256": "9362e47b65e791cf16c67e06a640ea0c04f6136f91d4b66c9eb670175ec43ab3"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/Monocle2_alternative_all_specimen_coverage.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/Monocle2_alternative_all_specimen_coverage.csv",
+    "bytes": 29118,
+    "sha256": "3d98aac459708f608d195ad0b2a27a71e5638ca50a412acea165b61471a71fd8"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/sensitivity/all_cohort_leaveout_summary.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/sensitivity/all_cohort_leaveout_summary.csv",
+    "bytes": 938,
+    "sha256": "5ec10f461da63b59c4e040f6b49d1e1f206fb464812bf143acaeb7c8beceabe1"
+  },
+  {
+    "path": "PC_REVIEW_TABLES/dynamic_genes/method_path_sensitivity/all_method_root_path_roster.csv",
+    "canonical_result_path": "results/02_表格/AllEpithelial/dynamic_genes/method_path_sensitivity/all_method_root_path_roster.csv",
+    "bytes": 1821,
+    "sha256": "d9a2b2e440f0169674d2539b310e0709e4bf4a3505e63a229c67f320e205ffab"
+  }
+]

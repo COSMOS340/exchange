@@ -1,0 +1,10 @@
+comparison,cells,clusters,main_edges,comparison_edges,shared_edges,edge_Jaccard,detail
+PCA_vs_Harmony,223736,17,16,16,15,0.882352941176471,MST-only sensitivity; inherited representations; no Harmony or curve refit
+leave_out_GSE132465,207852,17,16,16,15,0.882352941176471,MST-only sensitivity; inherited representations; no Harmony or curve refit
+leave_out_GSE144735,218048,17,16,16,15,0.882352941176471,MST-only sensitivity; inherited representations; no Harmony or curve refit
+leave_out_GSE161277,212405,17,16,16,15,0.882352941176471,MST-only sensitivity; inherited representations; no Harmony or curve refit
+leave_out_GSE166555,194929,17,16,16,15,0.882352941176471,MST-only sensitivity; inherited representations; no Harmony or curve refit
+leave_out_GSE178341,106223,17,16,,,,system is computationally singular: reciprocal condition number = 2.0322e-18
+leave_out_GSE200997,214135,17,16,16,15,0.882352941176471,MST-only sensitivity; inherited representations; no Harmony or curve refit
+leave_out_GSE231559,210217,17,16,16,16,1,MST-only sensitivity; inherited representations; no Harmony or curve refit
+leave_out_GSE245552,202343,17,16,16,15,0.882352941176471,MST-only sensitivity; inherited representations; no Harmony or curve refit

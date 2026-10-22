@@ -1,0 +1,30 @@
+{
+  "primary": {
+    "requested_root_group": "C1",
+    "requested_State": "7",
+    "requested_endpoint_center": "Y_125",
+    "endpoint_supporting_specimens": 181,
+    "endpoint_support_threshold_met": true,
+    "actual_root_cell": "GSM5075664::p009n2:TCCGGGATCCGGACTG",
+    "actual_root_group": "C2",
+    "actual_root_State": "7",
+    "root_distance_check": true,
+    "all_cells": 223736,
+    "states": 7,
+    "geometry_unchanged": true
+  },
+  "alternative": {
+    "requested_root_group": "C4",
+    "requested_State": "1",
+    "requested_endpoint_center": "Y_54",
+    "endpoint_supporting_specimens": 129,
+    "endpoint_support_threshold_met": true,
+    "actual_root_cell": "GSE178341::C157_N_0_0_0_c1_v3_id-ACCCAAAAGCTGGCCT",
+    "actual_root_group": "C4",
+    "actual_root_State": "1",
+    "root_distance_check": true,
+    "all_cells": 223736,
+    "states": 7,
+    "geometry_unchanged": true
+  }
+}

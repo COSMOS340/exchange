@@ -20,7 +20,7 @@ def main():
     records=[]
     names=['source_binding.json','engine_derivation.json','runtime_environment.json','Monocle2_binding.json','Slingshot_binding.json',
         'Monocle2_local_process.json','Slingshot_local_process.json','Monocle2_saved_postprocessing.json',
-        'Monocle2_extension_process.json','Slingshot_serial_postprocessing.json','warning_and_convergence_review.json',
+        'Monocle2_extension_process.json','Slingshot_serial_postprocessing.json','Slingshot_postprocessing_retry02.json','warning_and_convergence_review.json',
         'model_object_SHA256.json','numeric_acceptance.json','visual_audit.json','manual_remaining_steps.json']
     for name in names:
         p=LOG/name

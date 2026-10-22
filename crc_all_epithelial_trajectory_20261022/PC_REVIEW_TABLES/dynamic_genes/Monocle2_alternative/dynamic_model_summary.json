@@ -1,0 +1,21 @@
+{
+  "observations": 2655,
+  "specimens": 209,
+  "linkage_clusters": 123,
+  "numerator_df": 5,
+  "denominator_df": 122,
+  "residual_df": 2441,
+  "CR1_correction": 1.096171281589781,
+  "discarded_singleton_specimens": 6,
+  "interpretation": "Conditional within-specimen association with inferred pseudotime; not longitudinal or causal",
+  "root": "alternative",
+  "measured_genes": 15635,
+  "detection_eligible": 11902,
+  "tested_genes": 11902,
+  "selected_genes": 2205,
+  "supported_bins": 27,
+  "bins": 30,
+  "source_tables_complete": true,
+  "independent_numeric_validation_pending": true,
+  "inference_uses_cells_as_replicates": false
+}

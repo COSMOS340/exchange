@@ -43,9 +43,10 @@ def encoding(name):
     if name.startswith('50_'):
         return '各面板横轴为每条路径自身的0..1拟时序，纵轴包含全部返回路径；色值为有支持报告标签等权均值，模块单位为成员基因Z、代表基因为log1p(CP10K)，灰色为不足3标签覆盖。每特征跨方法/根共用色标。'
     if 'supported_labels' in name or 'proxy_specimens' in name:
-        return '各面板横轴为路径内12箱相对拟时序；纵轴依次为连续CNV、三组比例、六套Hallmark平均基因Z、cycling比例与log1p(UMI)。主体为等报告标签均值/IQR，代理图每线为单个标本；NA断开，阴影不是置信区间。'
+        return '各面板横轴为路径内12箱相对拟时序；前12面板依次为连续CNV、三组比例、六套Hallmark平均基因Z、cycling比例与log1p(UMI)。底部3面板列出全部路径成员及合格汇总的细胞、捕获单元、标本、报告标签和队列覆盖。主体为等报告标签均值/IQR，代理图每条彩线为单个标本（精确ID见源表）；NA断开，阴影不是置信区间。'
     if 'UMAP' in name or name.startswith('13_'):
-        return '横纵轴为继承状态UMAP；完整细胞按图例着色，曲线来自30维Harmony拟合的原生投影，二维交叉不等于转化。来源分面保留完整背景与所有同一拟合曲线。'
+        curves=('来源分面的曲线统一为黑色。' if name.startswith('13_') else '曲线按终点粗簇跨根保持一致颜色。')
+        return '横纵轴为继承状态UMAP；两根和所有分面共用相同坐标范围，完整细胞按图例着色。'+curves+'曲线来自30维Harmony拟合的原生投影，交叉及伸出点云的部分原样保留，不等于转化。来源分面保留完整背景与所有同一拟合曲线。'
     if name.startswith('40_'):return '横轴旧CRC-only、纵轴新共同树CRC子集的全池缩放拟时序；四面板展示所有根配对，hexbin聚合全部150,917细胞，色条为log刻度细胞数。'
     if name.startswith('41_'):return '纵轴旧State、横轴新State；每格为匹配细胞数，蓝色色阶为旧State内比例。原生State在各自拟合内换根不变，因此四根配对列联表经核对一致后只显示一次。'
     if name.startswith('42_'):return '横轴各次拟合全池的相对拟时序；纵轴为相同CRC细胞的原CNV，颜色区分旧/新拟合，实线capture→specimen等权均值、虚线pooled、阴影标本间IQR。'
@@ -102,7 +103,7 @@ def main():
         '## D. 动态基因、模块与GO','']
     for root,m in model.items():summary.append(f'- {root}：{m["tested_genes"]:,}基因可测，{m["selected_genes"]:,}达到冻结q/幅度阈值；{m["observations"]:,}标本-bin观测，{m["specimens"]}个可提供标本内变化的标本、{m["linkage_clusters"]}报告/未知链接簇，{m["supported_bins"]}/30箱支持。完整229标本资格表保留。')
     summary += ['',f'完成：主根K=2模块（607/1,180基因），候选K=2..8全基因silhouette、整链接单位bootstrap10次；根选择交集{sensitivity["root_selection_overlap"]:,}基因、Jaccard={sensitivity["root_selection_Jaccard"]:.3f}；全部8队列留一、全部方法/根/路径的固定模块与代表基因敏感性保存。完整热图和两张全部成员放大图、所有基因/箱/GO全表可追溯。', '',
-        f'GO背景11,902测量且检测合格基因，另有10,713 BP注释覆盖背景敏感性；完整{len(go_family):,}模块/术语组合行，其中{int(go_family.p_value.notna().sum()):,}有限P值纳入BH，其余没有合格背景成员而记不可测。逐项独立复算通过。显示注释为：']
+        f'GO背景11,902测量且检测合格基因，另有10,713 BP注释覆盖背景敏感性；完整{len(go_family):,}模块/术语组合行，其中{int(go_family.p_value.notna().sum()):,}有限P值纳入BH，其余没有合格背景成员而记不可测。逐项独立复算通过。显示注释为：','']
     for module,d in go.groupby('module'):summary.append('- '+module+'：'+'；'.join(d.term.tolist())+'。')
     summary += ['', '动态统计为条件于推断轨迹的标本内关联，未传播轨迹不确定性，也非细胞独立样本检验。GO不参与模块选择且不证明通路/蛋白活性或因果。','',
         '## E. 冻结六套Hallmark','',
@@ -110,10 +111,11 @@ def main():
         '## F. 同细胞Slingshot对照','']
     for root in ['primary','alternative']:
         s=sling[root];summary.append(f'- {root}：同{s["cells"]:,}细胞/{s["dimensions"]}维Harmony，实际起点{s["requested_root"]}；{s["paths"]}路径，{s["assigned_cells"]:,}至少一条PT有限、{s["unassigned_cells"]:,}完全未分配。全部原权重/NA保留，UMAP投影前后PT和权重逐项一致。')
+    summary += ['', 'Slingshot两根连同原生UMAP投影实际耗时9,206.388秒（2小时33分26秒），峰值RSS3,111,264KiB（约2.97GiB），退出码0。原生日志未见警告，但对象没有保存迭代次数或hasConverged；最大30次、阈值0.001不等于已证实以阈值停止。原生曲线延伸及二维交叉保留。','']
     topology=pd.read_csv(TAB/'topology_sensitivity.csv')
     for row in topology.itertuples():
         summary.append(f'- MST {row.comparison}：'+(f'边Jaccard={row.edge_Jaccard:.3f}。' if pd.notna(row.edge_Jaccard) else '不可评估，原因：'+str(row.detail)+'。'))
-    summary += ['', '逐队列动态模型敏感性（固定共同图与检测背景）：']
+    summary += ['', '逐队列动态模型敏感性（固定共同图与检测背景）：','']
     for row in pd.read_csv(TAB/'dynamic_genes/sensitivity/all_cohort_leaveout_summary.csv').itertuples():
         summary.append('- '+row.excluded_dataset+'：'+(f'可测，选择{int(row.selected_genes):,}基因，选择Jaccard={row.selection_Jaccard:.3f}，主成员分区ARI={row.primary_genes_partition_ARI:.3f}。' if row.status=='assessed' else '不可评估，原因：'+str(row.reason)+'。'))
     summary += ['', '所有路径对照均报告，不挑最高相关路径；MST层面PCA/Harmony与逐队列剔除另存，失败/不可评估保持NA及原因。没有独立外部生物学验证，也没有全量未加速Slingshot重复基线。','',
@@ -121,7 +123,7 @@ def main():
         '细胞只作结构显示；主趋势使用捕获/标本/有支持报告标签分层等权。未把149标签称为149独立患者，未加细胞级显著性星号，未新增GSEA、DNA CNV、代谢通量、真实时间、恶性克隆或因果推断。固定图上的队列留一不等于重训Harmony/DDRTree/全部曲线。','',
         '## H. 验收与交付','',
         f'完成：最终数值证据链、7个完整RDS哈希、全部{numeric["formal_figure_pairs"]}组PNG/PDF及逐页实际观察通过PC验收。全部源表、生成代码、参数/软件版本、拟合提交绑定、失败重试与图形修正均保留。', '',
-        '失败/修复记录：GO下载早期HTTP403后按完整字节范围重试并验证SHA；独立来源验证器的重复分组键已修复后全量通过；图注/实际根/色标/空缺区间/孤立均值点等实际视觉问题已保留旧版后修复并重新打开核对。原生优化警告属于保留限制，不伪称修复收敛。其他实际不可评估项目以对应源表状态和日志为准。','',
+        '失败/修复记录：GO下载早期HTTP403后按完整字节范围重试并验证SHA；独立来源验证器的重复分组键已修复后全量通过；独立R复算器把CSV的True/False读为字符而中断，已显式解析布尔值后对全部真实基因重跑QR/F/BH核验通过，原始统计模型未改动，失败与重试日志保留；图注/实际根/色标/空缺区间/孤立均值点等实际视觉问题已保留旧版后修复并重新打开核对。原生优化警告属于保留限制，不伪称修复收敛。其他实际不可评估项目以对应源表状态和日志为准。','',
         '仍待：完整ZIP/分片本地CRC与SHA传输核验、新Release上传后远端名称/字节/SHA及精确代码提交核验；Mac下载与第14步接收复核。后续回传收据单独记录这些状态，不将PC验收等同于Mac正式接收。','',
         '入口：[逐图阅读指南](01_逐图阅读指南.md)、[方法与限制](02_方法与限制.md)、`04_日志和检查/numeric_acceptance.json`、`04_日志和检查/visual_audit.json`。']
     (ROOT/'results/RUN_SUMMARY.md').write_text('\n'.join(summary)+'\n')

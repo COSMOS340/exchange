@@ -1,0 +1,9 @@
+method,root,path,cells,finite_time_cells,status,minimum_pt,maximum_pt,eligible_library_bins,supported_reported_labels,unsupported_specimens,supported_CNV_bins
+Monocle2,primary,1,161422,161422,descriptive,0.0,13.8271688902062,1729,124,21,12
+Monocle2,primary,2,77105,77105,descriptive,0.0,4.7770221539751,1107,121,12,10
+Monocle2,primary,3,73555,73555,descriptive,0.0,3.74021613669272,791,107,11,12
+Monocle2,primary,4,60216,60216,descriptive,0.0,9.97353973724448,662,109,17,11
+Monocle2,alternative,1,100221,100221,descriptive,0.0,12.081589972315,1401,122,20,12
+Monocle2,alternative,2,166637,166637,descriptive,0.0,14.7745495585311,1669,124,22,12
+Monocle2,alternative,3,161422,161422,descriptive,0.0,13.8271688902062,1729,124,21,12
+Monocle2,alternative,4,153298,153298,descriptive,0.0,21.0078731590828,1475,124,22,12

@@ -1,0 +1,17 @@
+dataset,tissue_group,display_3class,cells
+GSE132465,Normal_colorectal,Normal,1041
+GSE132465,Primary_CRC,CRC,14843
+GSE144735,Normal_colorectal,Normal,1116
+GSE144735,Primary_CRC,CRC,4572
+GSE161277,Normal_colorectal,Normal,3827
+GSE161277,Primary_CRC,CRC,7504
+GSE166555,Normal_colorectal,Normal,16497
+GSE166555,Primary_CRC,CRC,12310
+GSE178341,Normal_colorectal,Normal,35512
+GSE178341,Primary_CRC,CRC,82001
+GSE200997,Normal_colorectal,Normal,2690
+GSE200997,Primary_CRC,CRC,6911
+GSE231559,Normal_colorectal,Normal,3971
+GSE231559,Primary_CRC,CRC,9548
+GSE245552,Normal_colorectal,Adjacent,8165
+GSE245552,Primary_CRC,CRC,13228

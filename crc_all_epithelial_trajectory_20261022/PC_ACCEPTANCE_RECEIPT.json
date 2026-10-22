@@ -1,0 +1,52 @@
+{
+  "PC_numeric_passed": true,
+  "PC_actual_visual_passed": true,
+  "all_cells": 223736,
+  "figure_pairs": 97,
+  "PDF_pages": 97,
+  "model_objects": [
+    {
+      "path": "03_对象/AllEpithelial/Monocle2_DDRTree_checkpoint.rds",
+      "bytes": 7018984693,
+      "sha256": "7ff62dc42760e4ea80b593047e442a01fe23224a6096f7bea3bc39259642ded0"
+    },
+    {
+      "path": "03_对象/AllEpithelial/Monocle2_primary.rds",
+      "bytes": 7468049675,
+      "sha256": "87592bddf110638c6561758a58449671db174517371b2ef65dbe17da4a205b88"
+    },
+    {
+      "path": "03_对象/AllEpithelial/Monocle2_alternative.rds",
+      "bytes": 7467583471,
+      "sha256": "73514889bdb8fd7f8ffe98c50e640af0b111684ae0edb3df21e9f70e17d9bc8f"
+    },
+    {
+      "path": "03_对象/AllEpithelial/Slingshot_primary.rds",
+      "bytes": 608012450,
+      "sha256": "7273f287b09527b3bcf3d998a2473f44fb155200eeb95933269554e1f002ab32"
+    },
+    {
+      "path": "03_对象/AllEpithelial/Slingshot_alternative.rds",
+      "bytes": 565471735,
+      "sha256": "2e6bcae5ce512aaa948b6ba0887d24ee7751d2f1f819072a327dcf8dd08f5d47"
+    },
+    {
+      "path": "03_对象/AllEpithelial/Slingshot_primary_UMAP.rds",
+      "bytes": 557522817,
+      "sha256": "28c3cee168358eb17951055d9dad80c9e875a4e4bc83163464f8fdfb81ef940d"
+    },
+    {
+      "path": "03_对象/AllEpithelial/Slingshot_alternative_UMAP.rds",
+      "bytes": 515015969,
+      "sha256": "28fd939f39a09a0467efcc2fab8e194deda0246bccd50f71cc6e14758070b74c"
+    }
+  ],
+  "canonical_numeric_acceptance_sha256": "c0cdb67889ebf4e1e683b8ba4cf4277d7e9abf8bc262668a6f9e4e2015d7f3de",
+  "canonical_visual_audit_sha256": "0947142a546a020ba6ba601ff020432e0f15eec4ea7503374e222b4cdcdfcbf6",
+  "Monocle2_actual_fit_code_commit": "bdcc8df4fdf927b9d2db11ad349c1e60da76b8d8",
+  "Slingshot_actual_fit_code_commit": "adeb6886ff58a7779dc36ac8e961eb6937112691",
+  "final_delivery_code_commit": "Recorded after clean commit by RETURN_MANIFEST.json and exact Release tag target",
+  "full_output_files_and_hashes": "RESULT_MANIFEST.json in new result Release",
+  "local_transport_and_remote_publication_verification": "Separate receipts after packing/uploading",
+  "Mac_receiving_acceptance": "pending; do not automatically replace the formal step14 entry"
+}
