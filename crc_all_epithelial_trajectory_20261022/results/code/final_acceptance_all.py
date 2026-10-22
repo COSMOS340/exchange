@@ -61,7 +61,7 @@ def main():
         'function_and_composition_independent_validation.json','postprocessing_independent_validation.json',
         'dynamic_expression_independent_validation.json','dynamic_model_full_independent_validation.json',
         'source_profiles_and_module_independent_validation.json','GO_independent_validation.json',
-        'CRC_only_comparison_validation.json','dynamic_sensitivity_independent_validation.json',
+        'CRC_only_comparison_validation.json','CRC_comparison_independent_validation.json','dynamic_sensitivity_independent_validation.json',
         'module_activity_path_independent_validation.json','all_specimen_dynamic_coverage.json']
     evidence=[]
     for name in checks:
