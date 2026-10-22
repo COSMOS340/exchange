@@ -1,0 +1,37 @@
+[
+  {
+    "path": "Overall/Harmony.npy",
+    "bytes": 26848448,
+    "sha256": "1538bcbe659d7e4a44487935fc690c330770454cec056f9e199b895d7e9232a1"
+  },
+  {
+    "path": "Overall/PCA.npy",
+    "bytes": 26848448,
+    "sha256": "330ccaf14a3789aa02b61e02980023984398ff018957c1dc6e9ea5512e328f15"
+  },
+  {
+    "path": "Overall/counts.h5",
+    "bytes": 1100435987,
+    "sha256": "539f29286fa2931813a7c7f6223752ef4bee963ef024281a5e2ee343d63a2ee0"
+  },
+  {
+    "path": "Overall/genes.csv",
+    "bytes": 277993,
+    "sha256": "3dd62c72d99bcffa228cc59b2b369be6c0a24153f49b240a3efaf882797e6747"
+  },
+  {
+    "path": "Overall/metadata.csv.gz",
+    "bytes": 27063411,
+    "sha256": "ea0fbc92c492cb3fdbeb7b8fb2be844cf77b91c943c2c7d6f5f19e9998a7f2c7"
+  },
+  {
+    "path": "gene_sets/Hallmark_database.csv.gz",
+    "bytes": 112967,
+    "sha256": "9d2f5585b5d45d5c2d5c4d4466b51cf349a4de224f65505e94f5a5e897865097"
+  },
+  {
+    "path": "gene_sets/Hallmark_members.csv",
+    "bytes": 240820,
+    "sha256": "121b90204a255543336ce18a7413bb454277bf782eb487897f9da27a3a95b5bc"
+  }
+]

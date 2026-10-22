@@ -1,9 +1,17 @@
 data/
 work/
-results/
+results/*
+!results/code/
+!results/RUN_SUMMARY.md
+!results/01_逐图阅读指南.md
+!results/02_方法与限制.md
 return/
 *.zip
 *.part*
 .DS_Store
 __pycache__/
 
+
+.runtime/
+downloads/
+.analysis-env/

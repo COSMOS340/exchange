@@ -1,0 +1,42 @@
+[
+  {
+    "path": "AllEpithelial/Harmony.csv",
+    "bytes": 133507835,
+    "sha256": "c81fc30847f793acbb8448222f4577fc0613d009cd3f6d3f307a3019aa6acedd"
+  },
+  {
+    "path": "AllEpithelial/PCA.csv",
+    "bytes": 133312309,
+    "sha256": "5d527e9375269360755c942a90822d0272cbd6addd2fa22e45aa49c31e9bb494"
+  },
+  {
+    "path": "AllEpithelial/counts.h5",
+    "bytes": 1100435987,
+    "sha256": "539f29286fa2931813a7c7f6223752ef4bee963ef024281a5e2ee343d63a2ee0"
+  },
+  {
+    "path": "AllEpithelial/genes.csv",
+    "bytes": 455016,
+    "sha256": "54885361fe1db8f2c8c6f8bc1b942dab97ed5d3980279b80c2a7567cccd4837c"
+  },
+  {
+    "path": "AllEpithelial/metadata.csv.gz",
+    "bytes": 27169032,
+    "sha256": "78a4f0d8d2b9287599f9c26a968588c8af4bcff03bfc1a92a1d4550b53f23580"
+  },
+  {
+    "path": "analysis_request.json",
+    "bytes": 1542,
+    "sha256": "3fddf76c9433efc9f12928c49ed78b84ae3bbdeab67e43db63b1099f648b7395"
+  },
+  {
+    "path": "fit_generated.R",
+    "bytes": 22572,
+    "sha256": "dee78e55831a77d354aa49f163307a0c902d3fecbd83d77b5c2ed35381050d0e"
+  },
+  {
+    "path": "preparation_summary.json",
+    "bytes": 739,
+    "sha256": "e90f39f4369d9eea3e4fecbdbeb1065323f2acac53635cb01af802fc2a2a509f"
+  }
+]

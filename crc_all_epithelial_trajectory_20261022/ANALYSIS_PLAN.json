@@ -1,0 +1,81 @@
+{
+  "version": "all_epithelial_plan_v1_before_fitting",
+  "task_commit": "5cfd63241160058869ccc297bf4222b439813487",
+  "cells": 223736,
+  "genes": 15635,
+  "graph_root_policy": "Select specimen-supported common-tree endpoints after geometry is fixed; identity coverage audited only. No tissue/CNV/function columns available. Slingshot uses actual saved Monocle2 root clusters.",
+  "roots_used_for_dynamic_genes": [
+    "Monocle2 primary",
+    "Monocle2 alternative"
+  ],
+  "dynamic_genes": {
+    "bins": 30,
+    "capture_bin_minimum_cells": 10,
+    "aggregation": "Capture-bin means of log1p(CP10K), then equal capture means within each specimen-bin; all specimens retained",
+    "UMI_denominator": "nCount_input",
+    "detection_minimum_cell_fraction": 0.01,
+    "detection_minimum_specimens": 10,
+    "detection_minimum_positive_cells_per_specimen": 5,
+    "display_bin_minimum_specimens": 5,
+    "display_bin_minimum_datasets": 2,
+    "model": "Specimen-fixed-intercept WLS with cubic B-spline time basis; within each specimen observed bins have equal weights summing to one. Basis degree3, interior knots1/3 and2/3, drop first of6 columns, five time coefficients.",
+    "covariance": "Cluster-robust CR1 by supported reported subject_key; unsupported links grouped into one conservative unknown cluster per dataset. These are reported linkage units, not verified independent patients.",
+    "test": "Joint five-coefficient Wald F, F(5,G-1), singular covariance recorded unassessable. BH over all detection-eligible tested measured genes, separately for each root.",
+    "primary_BH_q": 0.05,
+    "primary_minimum_adjusted_dynamic_amplitude": 0.25,
+    "sensitivity_q": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "sensitivity_amplitude": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "tissue_CNV_function_used_for_selection": false,
+    "star_annotations": false,
+    "limitations": "Conditional association with a data-derived trajectory; no independent validation of pseudotime and no longitudinal or causal inference."
+  },
+  "modules": {
+    "input": "Within-gene Z scores of specimen-intercept-adjusted spline trajectories on supported bins; no tissue/CNV/function labels",
+    "candidate_k": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "algorithm": "All selected genes, deterministic multi-start kmeans; no biological cell sampling",
+    "selection": "Maximum silhouette among K with median adjusted-Rand stability >=0.75 across 10 bootstrap draws of whole linkage clusters stratified by dataset; if none, report instability and choose highest median stability then silhouette. No GO-based tuning.",
+    "bootstrap_iterations": 10,
+    "bootstrap_seed": 20261022,
+    "representatives": "Closest genes to module centroid, deterministic gene-name tie break; up to3 per module",
+    "root_sensitivity": "Alternate-root gene statistics, selection overlap, module profiles and concordance after cell-ID orientation assessment",
+    "method_sensitivity": "All Slingshot primary/alternative paths: specimen-equal module and representative-gene trends with actual coverage and weights, no favorable-path selection",
+    "cohort_sensitivity": "Refit binned-expression dynamic model and module profiles leaving each dataset out; fixed common graph, not a claim of re-trained Harmony or curves"
+  },
+  "GO": {
+    "annotation_source": "Official NCBI human gene_info and gene2go; GO basic ontology from Gene Ontology; versions, URLs and SHA256 frozen before enrichment",
+    "mapping": "Exact official symbols first; only unambiguous synonyms for unresolved symbols; all mapping fates saved",
+    "ontology": "Biological Process; exclude NOT and ND; propagate is_a and part_of to BP ancestors",
+    "background": "Only the measured genes passing the frozen detection preconditions; all unmapped backgrounds and effective annotation coverage disclosed",
+    "test": "One-sided hypergeometric overrepresentation; BH over all module-term tests",
+    "display_q": 0.05,
+    "display_max_terms_per_module": 3,
+    "display_redundancy": "Greedy BH order, omit ancestor/descendant redundancies or hit-set Jaccard >=0.5; no significant term means no enriched GO term"
+  },
+  "path_dynamics": {
+    "bins": 12,
+    "minimum_cells_per_capture_bin": 10,
+    "supported_reported_label_minimum_per_bin": 3,
+    "unit_hierarchy": "capture -> specimen -> supported reported label, equally weighted at each step; unsupported proxies separate",
+    "Slingshot_membership": "finite path PT and native weight >=0.5",
+    "empty_bins": "NA gaps, never zero or bridged"
+  },
+  "CNV_tissue_interpretation": "Shared-identity and within-CRC unit-equal comparisons plus frozen CRC-only outputs by exact cell_id; no CNV progression claim from source composition",
+  "visual_review": "Every formal PNG actually opened and every PDF page rendered and actually opened; bind observations to file SHA256",
+  "old_models_and_input_labels_preserved": true
+}

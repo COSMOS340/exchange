@@ -1,0 +1,23 @@
+args=commandArgs(TRUE);root=normalizePath(args[1])
+suppressPackageStartupMessages({library(igraph);library(jsonlite)})
+source(file.path(root,'results/code/select_endpoint_roots.R'))
+g=graph_from_data_frame(data.frame(from='O',to=c('A','B','C'),weight=c(1,2,4)),directed=FALSE)
+leaf=rep(c('A','B','C'),c(30,25,25))
+meta=data.frame(cell_id=paste0('test',seq_along(leaf)),
+ specimen_id=paste0(leaf,rep(c(rep(1:6,each=5),rep(1:5,each=5),rep(1:5,each=5)))),
+ dataset='synthetic',coarse_state=paste0('K',leaf),broad_identity='test_identity')
+state=rep(c('1','2','3'),c(30,25,25))
+a=select_endpoint_roots(g,leaf,meta,state)
+stopifnot(a$primary$center=='A',a$alternative$center=='C',
+ a$primary$supporting_specimens==6L,a$alternative$supporting_specimens==5L)
+meta$coarse_state=rev(meta$coarse_state);meta$broad_identity=paste0('renamed_',meta$broad_identity)
+b=select_endpoint_roots(g,leaf,meta,state)
+stopifnot(a$primary$center==b$primary$center,a$alternative$center==b$alternative$center)
+meta$tissue_group='forbidden_label'
+rejected=tryCatch({select_endpoint_roots(g,leaf,meta,state);FALSE},error=function(e)TRUE)
+stopifnot(rejected)
+report=list(passed=TRUE,scope='Synthetic graph and labels only; no biological fit',
+ root_endpoint_support=TRUE,alternative_weighted_graph_distance=TRUE,
+ identity_label_renaming_invariant=TRUE,extra_tissue_columns_rejected=TRUE)
+write_json(report,file.path(root,'results/04_日志和检查/endpoint_root_synthetic_validation.json'),pretty=TRUE,auto_unbox=TRUE)
+print(report)

@@ -1,0 +1,30 @@
+{
+  "handoff_version": "all_epithelial_pc_20261022_v1",
+  "seed": 20261020,
+  "source_cells": 223736,
+  "fitted_cells": 223736,
+  "selection": null,
+  "scope_name": "All frozen colorectal epithelial cells",
+  "primary_method": "Monocle2",
+  "comparison_method": "Slingshot",
+  "monocle_max_iter": 100,
+  "monocle_tolerance": 0.001,
+  "slingshot_max_iter": 30,
+  "curve_points": 150,
+  "no_random_cell_sampling": true,
+  "fit_all_cells_jointly": true,
+  "split_cell_models": false,
+  "mac_blocked_preprocessing": false,
+  "retain_verified_graph_and_compatibility_patches": true,
+  "root_policy": "Select specimen-supported common-tree endpoints after geometry is fixed; identity coverage audited only. No tissue/CNV/function columns available. Slingshot uses actual saved Monocle2 root clusters.",
+  "ordering_genes": "Frozen ordering list intersect genes detected in at least 10 full-pool cells; no tissue/CNV/dynamic DE selection",
+  "function_sets": [
+    "HALLMARK_OXIDATIVE_PHOSPHORYLATION",
+    "HALLMARK_INTERFERON_GAMMA_RESPONSE",
+    "HALLMARK_INTERFERON_ALPHA_RESPONSE",
+    "HALLMARK_TNFA_SIGNALING_VIA_NFKB",
+    "HALLMARK_E2F_TARGETS",
+    "HALLMARK_MYC_TARGETS_V2"
+  ],
+  "extra_significance_tests": "Only preregistered specimen-level dynamic genes and module GO requested in this new task"
+}

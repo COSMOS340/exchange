@@ -1,0 +1,10 @@
+{
+  "repository": "COSMOS340/exchange",
+  "release_tag": "crc-monocle2-input-v1-20261021",
+  "asset": "input_data.zip",
+  "bytes": 1181830179,
+  "sha256": "ce89b556ea4c167c2f164ed6757ec54094d9c712ff81d4db9daf4221e013d724",
+  "format": "ZIP with data/ and INPUT_MANIFEST.json; extract in crc_monocle2_20261021",
+  "source_cells": 223736,
+  "main_fit_cells": 150917
+}
