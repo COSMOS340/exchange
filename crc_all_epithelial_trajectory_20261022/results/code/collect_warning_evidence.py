@@ -12,7 +12,7 @@ def main():
         path=LOG/f'{method}_console.log';lines=path.read_text(errors='replace').splitlines()
         warnings=[]
         for i,line in enumerate(lines):
-            if re.search(r'Warning|did not converge|steps exceeded|NaNs produced',line):
+            if re.search(r'Warning|did not converge|steps exceeded|NaNs produced|opposite directions|No longer forcing|allow.breaks',line):
                 warnings.append(dict(line=i+1,text=line,following=lines[i+1:i+3]))
         resource=(LOG/f'{method}_resource_usage.txt').read_text()
         report['methods'][method]=dict(console_sha256=digest(path),native_warnings=warnings,
