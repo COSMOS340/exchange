@@ -8,6 +8,8 @@ from matplotlib.lines import Line2D
 import numpy as np
 import pandas as pd
 
+plt.rcParams.update({'pdf.fonttype':42,'font.size':9})
+
 ROOT=Path(__file__).resolve().parents[2]
 TAB=ROOT/'results/02_表格/AllEpithelial';OUT=ROOT/'results/01_图形/main';LOG=ROOT/'results/04_日志和检查'
 m=pd.read_csv(ROOT/'work/AllEpithelial/metadata.csv.gz',low_memory=False)

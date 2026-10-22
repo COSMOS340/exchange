@@ -10,6 +10,8 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
+plt.rcParams.update({'pdf.fonttype':42,'font.size':9})
+
 ROOT = Path(__file__).resolve().parents[2]
 TAB = ROOT / "results/02_表格/AllEpithelial"
 UNITS = TAB / "dynamics"
