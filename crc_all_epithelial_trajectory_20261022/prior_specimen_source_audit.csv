@@ -1,0 +1,236 @@
+dataset,specimen_id,tissue_group,normal_origin,origin_evidence
+GSE132465,GSE132465::SMC01-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC01-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC02-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC02-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC03-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC03-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC04-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC04-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC05-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC05-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC06-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC06-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC07-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC07-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC08-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC08-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC09-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC09-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC10-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE132465,GSE132465::SMC10-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC11-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC14-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC15-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC16-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC17-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC18-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC19-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC20-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC21-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC22-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC23-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC24-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE132465,GSE132465::SMC25-T,Primary_CRC,Not_normal,Colorectal cancer
+GSE144735,GSE144735::KUL01-B,Primary_CRC,Not_normal,Border region
+GSE144735,GSE144735::KUL01-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE144735,GSE144735::KUL01-T,Primary_CRC,Not_normal,Core region
+GSE144735,GSE144735::KUL19-B,Primary_CRC,Not_normal,Border region
+GSE144735,GSE144735::KUL19-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE144735,GSE144735::KUL19-T,Primary_CRC,Not_normal,Core region
+GSE144735,GSE144735::KUL21-B,Primary_CRC,Not_normal,Border region
+GSE144735,GSE144735::KUL21-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE144735,GSE144735::KUL21-T,Primary_CRC,Not_normal,Core region
+GSE144735,GSE144735::KUL28-B,Primary_CRC,Not_normal,Border region
+GSE144735,GSE144735::KUL28-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE144735,GSE144735::KUL28-T,Primary_CRC,Not_normal,Core region
+GSE144735,GSE144735::KUL30-B,Primary_CRC,Not_normal,Border region
+GSE144735,GSE144735::KUL30-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE144735,GSE144735::KUL30-T,Primary_CRC,Not_normal,Core region
+GSE144735,GSE144735::KUL31-B,Primary_CRC,Not_normal,Border region
+GSE144735,GSE144735::KUL31-N,Normal_colorectal,Normal_unspecified_distance,Normal mucosa
+GSE144735,GSE144735::KUL31-T,Primary_CRC,Not_normal,Core region
+GSE161277,GSE161277::GSM4904234,Primary_CRC,Not_normal,carcinoma
+GSE161277,GSE161277::GSM4904236,Primary_CRC,Not_normal,carcinoma
+GSE161277,GSE161277::GSM4904237,Normal_colorectal,Normal_unspecified_distance,normal
+GSE161277,GSE161277::GSM4904239,Primary_CRC,Not_normal,carcinoma
+GSE161277,GSE161277::GSM4904240,Normal_colorectal,Normal_unspecified_distance,normal
+GSE161277,GSE161277::GSM4904245,Primary_CRC,Not_normal,carcinoma
+GSE161277,GSE161277::GSM4904246,Normal_colorectal,Normal_unspecified_distance,normal
+GSE166555,GSE166555::GSM5075659,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075660,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075661,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075662,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075663,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075664,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075665,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075666,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075667,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075668,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075669,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075670,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075671,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075672,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075673,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075674,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075675,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075676,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075677,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075678,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075679,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075680,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075681,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075682,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE166555,GSE166555::GSM5075683,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE178341,GSE178341::C103_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C104_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C105_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C106_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C106_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C107_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C107_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C109_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C109_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C110_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C110_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C111_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C111_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C112_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C112_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C113_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C113_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C114_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C114_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C115_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C115_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C116_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C116_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C118_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C119_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C119_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C122_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C122_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C123_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C123_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C124_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C124_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C125_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C125_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C126_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C126_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C129_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C129_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C130_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C130_TA,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C130_TB,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C132_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C132_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C133_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C133_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C134_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C134_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C135_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C135_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C136_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C136_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C137_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C137_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C138_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C138_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C139_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C139_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C140_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C140_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C142_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C142_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C143_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C143_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C144_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C145_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C146_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C147_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C149_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C150_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C151_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C151_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C152_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C152_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C153_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C154_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C155_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C155_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C156_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C157_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C157_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C158_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C159_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C160_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C161_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C162_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C162_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C163_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C164_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C165_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C165_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C166_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C167_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C168_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C169_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C170_N,Normal_colorectal,Normal_unspecified_distance,N
+GSE178341,GSE178341::C170_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C171_TA,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C171_TB,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C172_T,Primary_CRC,Not_normal,T
+GSE178341,GSE178341::C173_T,Primary_CRC,Not_normal,T
+GSE200997,GSE200997::B_cac10,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE200997,GSE200997::B_cac11,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE200997,GSE200997::B_cac14,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE200997,GSE200997::B_cac15,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE200997,GSE200997::B_cac4,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE200997,GSE200997::B_cac6,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE200997,GSE200997::B_cac7,Normal_colorectal,Normal_unspecified_distance,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac1,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac10,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac11,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac12,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac13,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac14,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac15,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac16,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac2,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac3,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac4,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac5,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac6,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac7,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac8,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE200997,GSE200997::T_cac9,Primary_CRC,Not_normal,See library source/title; distance unavailable
+GSE231559,GSE231559::GSM7290762,Normal_colorectal,Normal_unspecified_distance,Colon normal
+GSE231559,GSE231559::GSM7290763,Primary_CRC,Not_normal,Colon tumor
+GSE231559,GSE231559::GSM7290768,Normal_colorectal,Normal_unspecified_distance,Colon normal
+GSE231559,GSE231559::GSM7290769,Primary_CRC,Not_normal,Colon tumor
+GSE231559,GSE231559::GSM7290771,Normal_colorectal,Normal_unspecified_distance,Colon normal
+GSE231559,GSE231559::GSM7290772,Primary_CRC,Not_normal,Colon tumor
+GSE231559,GSE231559::GSM7290773,Primary_CRC,Not_normal,Colon tumor
+GSE231559,GSE231559::GSM7290774,Primary_CRC,Not_normal,Colon tumor
+GSE231559,GSE231559::GSM7290777,Primary_CRC,Not_normal,Colon tumor
+GSE245552,GSE245552::GSM7844812,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844814,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844816,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844818,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844820,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844823,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844826,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844828,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844829,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844832,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844833,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844835,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844837,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844838,Normal_colorectal,Explicit_adjacent,colon adjacent tissue
+GSE245552,GSE245552::GSM7844839,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844841,Normal_colorectal,Explicit_adjacent,colon adjacent tissue
+GSE245552,GSE245552::GSM7844844,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844846,Normal_colorectal,Explicit_adjacent,colon adjacent tissue
+GSE245552,GSE245552::GSM7844847,Primary_CRC,Not_normal,primary tumor
+GSE245552,GSE245552::GSM7844849,Normal_colorectal,Explicit_adjacent,colon adjacent tissue

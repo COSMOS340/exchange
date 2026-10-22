@@ -1,0 +1,10 @@
+dataset,normal_cells,adjacent_cells,primary_crc_cells,normal_captures,adjacent_captures,primary_crc_captures,normal_subject_labels,adjacent_subject_labels,primary_crc_subject_labels,normal_source_origin,origin_evidence
+GSE132465,1041,0,14843,10,0,23,10,0,23,Normal_unspecified_distance,Normal mucosa
+GSE144735,1116,0,4572,6,0,12,6,0,6,Normal_unspecified_distance,Normal mucosa
+GSE161277,3827,0,7504,3,0,4,3,0,4,Normal_unspecified_distance,normal
+GSE166555,16497,0,12310,12,0,13,11,0,12,Normal_unspecified_distance,library source and title; distance unavailable
+GSE178341,35512,0,82001,34,0,73,32,0,60,Normal_unspecified_distance,N
+GSE200997,2690,0,6911,7,0,16,7,0,16,Normal_unspecified_distance,library source and title; distance unavailable
+GSE231559,3971,0,9548,3,0,6,3,0,6,Normal_unspecified_distance,Colon normal
+GSE245552,0,8165,13228,0,4,16,0,4,15,Explicit_adjacent,colon adjacent tissue
+
