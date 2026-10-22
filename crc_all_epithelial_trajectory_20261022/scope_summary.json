@@ -1,0 +1,46 @@
+{
+  "task_id": "crc_all_epithelial_trajectory_20261022",
+  "input_release": "crc-monocle2-input-v1-20261021",
+  "matrix": {
+    "genes": 15635,
+    "cells": 223736
+  },
+  "frozen_units": {
+    "datasets": 8,
+    "specimen_labels": 229,
+    "capture_units": 242,
+    "subject_labels": 149
+  },
+  "tissue_group_2class": {
+    "Normal_colorectal": 72819,
+    "Primary_CRC": 150917
+  },
+  "tissue_source_3class": {
+    "Normal": 64654,
+    "Adjacent": 8165,
+    "CRC": 150917
+  },
+  "normal_origin_exact_values": {
+    "Normal_unspecified_distance": 64654,
+    "Explicit_adjacent": 8165,
+    "Not_normal": 150917
+  },
+  "cnv_by_tissue_group": {
+    "Normal_colorectal": {
+      "Low": 41609,
+      "Intermediate": 24124,
+      "High": 7086
+    },
+    "Primary_CRC": {
+      "Low": 41686,
+      "Intermediate": 46755,
+      "High": 62476
+    }
+  },
+  "healthy_donor_tissue_present": false,
+  "all_cells_single_shared_tree": true,
+  "random_subsampling_allowed": false,
+  "split_tree_fits_allowed": false,
+  "planned_result_release": "crc-all-epithelial-trajectory-results-v1-20261022"
+}
+
