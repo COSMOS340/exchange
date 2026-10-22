@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "archive_sha256": "5bb3dce1e66e347cd6448f19e8c6bc0456d9e35773c5b82c388b7a73a84f0ffb",
+  "archive_bytes": 6835510263,
+  "transport_assets": 5,
+  "concatenated_transport_hash_matches": true,
+  "all_zip_member_CRCs_verified": true,
+  "result_files_verified": 1144,
+  "result_bytes_verified": 25983288202,
+  "all_sidecar_files_verified": 20,
+  "scientific_acceptance": "Separate: inspect numeric_acceptance.json and visual_audit.json"
+}

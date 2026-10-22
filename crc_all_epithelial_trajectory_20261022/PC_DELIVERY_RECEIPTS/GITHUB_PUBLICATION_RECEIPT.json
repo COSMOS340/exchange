@@ -1,0 +1,156 @@
+{
+  "tag": "crc-all-epithelial-trajectory-results-v1-20261022",
+  "release_id": 420893762,
+  "code_commit": "c25fa02d6b89a33609e548b7db04069d1fc523b8",
+  "branch": "pc-all-epithelial-results-20261022",
+  "expected_assets": [
+    {
+      "name": "results.zip.part001",
+      "bytes": 1610612736,
+      "sha256": "a4b21cff1af9f22b6bb7eae8da96e1058ade4935f3c5d2477a4131821fdeb087"
+    },
+    {
+      "name": "results.zip.part002",
+      "bytes": 1610612736,
+      "sha256": "ebe2f9d35b4c9d34cf4df4287ab76048b17a913292679fc75cb350d75f706432"
+    },
+    {
+      "name": "results.zip.part003",
+      "bytes": 1610612736,
+      "sha256": "36244c2546928dffda1a597492d0b5d155cc8b53caa2879426af3882dfe85c07"
+    },
+    {
+      "name": "results.zip.part004",
+      "bytes": 1610612736,
+      "sha256": "efaaedbeefcb3efa4a8c60f911df74ff64dd15df6f305841a684513b7e144c81"
+    },
+    {
+      "name": "results.zip.part005",
+      "bytes": 393059319,
+      "sha256": "6a0efa3b35f525e8b10d5bc6aad524167602183558e0477e5f0d1b5b97e6a4d0"
+    },
+    {
+      "name": "RESULT_MANIFEST.json",
+      "bytes": 226120,
+      "sha256": "f1d8743937f360cba6faa66f7aba6d8c21010697d8d7ce91e7166cf03728fe60"
+    },
+    {
+      "name": "SIDECAR_MANIFEST.json",
+      "bytes": 2892,
+      "sha256": "a569e46dd6a6a5fab29d30e6bc8cebe2a9f80eb173a916e3b9bdd237fb6bdfbe"
+    },
+    {
+      "name": "RETURN_MANIFEST.json",
+      "bytes": 1419,
+      "sha256": "9ded2b3320acd3d064c6e03cf5b1a3d354e2c749fb62bc2d5f8d4d65271c947a"
+    },
+    {
+      "name": "LOCAL_TRANSPORT_VERIFICATION.json",
+      "bytes": 455,
+      "sha256": "28b73b8c884692cc7120c45224250f4871727ca7ca13f5f3c1f448733f12ec3a"
+    },
+    {
+      "name": "RUN_SUMMARY.md",
+      "bytes": 8047,
+      "sha256": "089cdad38b5c59744c0a1f51b6e2702caf030ea86993cadb0ce4178f842174ee"
+    }
+  ],
+  "verified_assets": [
+    {
+      "name": "results.zip.part001",
+      "bytes": 1610612736,
+      "sha256": "a4b21cff1af9f22b6bb7eae8da96e1058ade4935f3c5d2477a4131821fdeb087",
+      "asset_id": 666282856,
+      "remote_digest": "sha256:a4b21cff1af9f22b6bb7eae8da96e1058ade4935f3c5d2477a4131821fdeb087",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/results.zip.part001"
+    },
+    {
+      "name": "results.zip.part002",
+      "bytes": 1610612736,
+      "sha256": "ebe2f9d35b4c9d34cf4df4287ab76048b17a913292679fc75cb350d75f706432",
+      "asset_id": 666298410,
+      "remote_digest": "sha256:ebe2f9d35b4c9d34cf4df4287ab76048b17a913292679fc75cb350d75f706432",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/results.zip.part002"
+    },
+    {
+      "name": "results.zip.part003",
+      "bytes": 1610612736,
+      "sha256": "36244c2546928dffda1a597492d0b5d155cc8b53caa2879426af3882dfe85c07",
+      "asset_id": 666316435,
+      "remote_digest": "sha256:36244c2546928dffda1a597492d0b5d155cc8b53caa2879426af3882dfe85c07",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/results.zip.part003"
+    },
+    {
+      "name": "results.zip.part004",
+      "bytes": 1610612736,
+      "sha256": "efaaedbeefcb3efa4a8c60f911df74ff64dd15df6f305841a684513b7e144c81",
+      "asset_id": 666334327,
+      "remote_digest": "sha256:efaaedbeefcb3efa4a8c60f911df74ff64dd15df6f305841a684513b7e144c81",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/results.zip.part004"
+    },
+    {
+      "name": "results.zip.part005",
+      "bytes": 393059319,
+      "sha256": "6a0efa3b35f525e8b10d5bc6aad524167602183558e0477e5f0d1b5b97e6a4d0",
+      "asset_id": 666347061,
+      "remote_digest": "sha256:6a0efa3b35f525e8b10d5bc6aad524167602183558e0477e5f0d1b5b97e6a4d0",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/results.zip.part005"
+    },
+    {
+      "name": "RESULT_MANIFEST.json",
+      "bytes": 226120,
+      "sha256": "f1d8743937f360cba6faa66f7aba6d8c21010697d8d7ce91e7166cf03728fe60",
+      "asset_id": 666350939,
+      "remote_digest": "sha256:f1d8743937f360cba6faa66f7aba6d8c21010697d8d7ce91e7166cf03728fe60",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/RESULT_MANIFEST.json"
+    },
+    {
+      "name": "SIDECAR_MANIFEST.json",
+      "bytes": 2892,
+      "sha256": "a569e46dd6a6a5fab29d30e6bc8cebe2a9f80eb173a916e3b9bdd237fb6bdfbe",
+      "asset_id": 666351215,
+      "remote_digest": "sha256:a569e46dd6a6a5fab29d30e6bc8cebe2a9f80eb173a916e3b9bdd237fb6bdfbe",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/SIDECAR_MANIFEST.json"
+    },
+    {
+      "name": "RETURN_MANIFEST.json",
+      "bytes": 1419,
+      "sha256": "9ded2b3320acd3d064c6e03cf5b1a3d354e2c749fb62bc2d5f8d4d65271c947a",
+      "asset_id": 666351524,
+      "remote_digest": "sha256:9ded2b3320acd3d064c6e03cf5b1a3d354e2c749fb62bc2d5f8d4d65271c947a",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/RETURN_MANIFEST.json"
+    },
+    {
+      "name": "LOCAL_TRANSPORT_VERIFICATION.json",
+      "bytes": 455,
+      "sha256": "28b73b8c884692cc7120c45224250f4871727ca7ca13f5f3c1f448733f12ec3a",
+      "asset_id": 666351937,
+      "remote_digest": "sha256:28b73b8c884692cc7120c45224250f4871727ca7ca13f5f3c1f448733f12ec3a",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/LOCAL_TRANSPORT_VERIFICATION.json"
+    },
+    {
+      "name": "RUN_SUMMARY.md",
+      "bytes": 8047,
+      "sha256": "089cdad38b5c59744c0a1f51b6e2702caf030ea86993cadb0ce4178f842174ee",
+      "asset_id": 666352238,
+      "remote_digest": "sha256:089cdad38b5c59744c0a1f51b6e2702caf030ea86993cadb0ce4178f842174ee",
+      "download_url": "https://github.com/COSMOS340/exchange/releases/download/untagged-7298246d32c08eb99fbf/RUN_SUMMARY.md"
+    }
+  ],
+  "published": true,
+  "draft_recovery": {
+    "reason": "New draft was created successfully, then REST releases/tags lookup returned 404; recover by verified release ID",
+    "recovered_at": "2026-10-22T15:34:48.300224+00:00",
+    "release_id": 420893762,
+    "draft_author": "datimmor-byte",
+    "draft_created_at": "2026-10-22T15:32:58Z",
+    "original_console_sha256": "95e2db848d56a22a955885c3d114d7c3370a35a3e047f470562cf623216300b3",
+    "original_source_sha256": "efc6b5b76eb961322e58bdb46c3e869a166f4979a473e107577da1f7de529557",
+    "own_draft_url_matches_original_console": true,
+    "exact_body_target_and_empty_assets_verified": true
+  },
+  "url": "https://github.com/COSMOS340/exchange/releases/tag/crc-all-epithelial-trajectory-results-v1-20261022",
+  "all_remote_names_bytes_SHA256_verified": true,
+  "exact_tag_code_commit_verified": true,
+  "Mac_receiving_acceptance": "pending"
+}

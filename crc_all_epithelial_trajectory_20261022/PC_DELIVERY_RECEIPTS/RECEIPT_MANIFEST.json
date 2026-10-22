@@ -1,0 +1,117 @@
+{
+  "created_at": "2026-10-22T16:04:17.772767+00:00",
+  "files": [
+    {
+      "path": "PC_DELIVERY_RECEIPTS/DRAFT_RECOVERY_EVIDENCE.json",
+      "bytes": 4988,
+      "sha256": "5e7193247dc98e3d8ff6cc81cd6d0ed84ed286632bd0f95d9c4ff17c4c0c32d1"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/GITHUB_PUBLICATION_RECEIPT.json",
+      "bytes": 6914,
+      "sha256": "c36ea03dfee7e238b915a301adeb172a7ba607786449e331c8ffeca5d0c9dc0c"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/LOCAL_TRANSPORT_VERIFICATION.json",
+      "bytes": 455,
+      "sha256": "28b73b8c884692cc7120c45224250f4871727ca7ca13f5f3c1f448733f12ec3a"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/PUBLICATION_RETRY_COMMANDS.json",
+      "bytes": 1165,
+      "sha256": "9cc9c088340632b259db673eef1a386bd7ec6ae0044f13181911cbaf07d74861"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/RELEASE_NOTES_v1.md",
+      "bytes": 2245,
+      "sha256": "57cd59a8bccb13890b164a3c8f7a049901fff6ffc9b00b8419626c999937afde"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/RESULT_MANIFEST.json",
+      "bytes": 226120,
+      "sha256": "f1d8743937f360cba6faa66f7aba6d8c21010697d8d7ce91e7166cf03728fe60"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/RETURN_MANIFEST.json",
+      "bytes": 1419,
+      "sha256": "9ded2b3320acd3d064c6e03cf5b1a3d354e2c749fb62bc2d5f8d4d65271c947a"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/SIDECAR_MANIFEST.json",
+      "bytes": 2892,
+      "sha256": "a569e46dd6a6a5fab29d30e6bc8cebe2a9f80eb173a916e3b9bdd237fb6bdfbe"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/pack_v1_GNU_time.txt",
+      "bytes": 823,
+      "sha256": "d8941c0fc99b647e40192b27201d14565085ac9328ca387112f23390a84ed6a0"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/pack_v1_console.log",
+      "bytes": 1419,
+      "sha256": "9ded2b3320acd3d064c6e03cf5b1a3d354e2c749fb62bc2d5f8d4d65271c947a"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/publish_v1_GNU_time.txt",
+      "bytes": 947,
+      "sha256": "3e79379159465fb72e3ea17b0574a132ddb9c1f85e0eed7ab57bb4dc141a0f72"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/publish_v1_console.log",
+      "bytes": 2208,
+      "sha256": "95e2db848d56a22a955885c3d114d7c3370a35a3e047f470562cf623216300b3"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/publish_v1_retry02_GNU_time.txt",
+      "bytes": 940,
+      "sha256": "a7bbc0e7d6aa0081f12b938b35aaa8fbf0ff9dc89f20984bea957f58e209bc0b"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/publish_v1_retry02_console.log",
+      "bytes": 1848,
+      "sha256": "23985546920d37a15478380139bd151b62ed83ec81944d23916e8830a597d31e"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/publish_v1_retry03_GNU_time.txt",
+      "bytes": 1062,
+      "sha256": "8720d9734eeb804f822dbb1476236d96623e286e99dfa7dc62a4fceebf3323d6"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/publish_v1_retry03_console.log",
+      "bytes": 645,
+      "sha256": "401e49fa94bda9b275ad05456cb53b6439611cf73f7398f23165b812c037771a"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/recover_own_new_draft.py",
+      "bytes": 2506,
+      "sha256": "2331f18e8364f1f20f0b3ce1ebf781bec08e409b96d2d73de8607ff76af8e6d7"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/retry_authorized_publication.py",
+      "bytes": 2110,
+      "sha256": "5c56770e46303c09778b8b089e41c11f5fce1052b65579bff3d59b5dc8f62505"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/verify_v1_GNU_time.txt",
+      "bytes": 811,
+      "sha256": "f5350cd1db4a51ad679121f0ac4044d85872fca0730aed8af97bf901f740a7ea"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/verify_v1_console.log",
+      "bytes": 455,
+      "sha256": "28b73b8c884692cc7120c45224250f4871727ca7ca13f5f3c1f448733f12ec3a"
+    },
+    {
+      "path": "PC_DELIVERY_RECEIPTS/write_published_receipts.py",
+      "bytes": 4859,
+      "sha256": "2dd9617a14a06ab8a04045ac4f58e8697ae269271426255c522f2e68c9be1ecb"
+    },
+    {
+      "path": "GITHUB_RETURN.md",
+      "bytes": 2710,
+      "sha256": "b4f1aa35c71e8e6dccc4da3933d1e31e4a9c81e6f2f03376860c36e58afb85a8"
+    }
+  ],
+  "manifest_does_not_self_hash": true,
+  "Mac_receiving_acceptance": "pending"
+}

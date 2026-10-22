@@ -1,0 +1,102 @@
+[
+  {
+    "path": "AGENTS.md",
+    "bytes": 2039,
+    "sha256": "389e1ca762086d86435f625a4e839cea77a8c02525679c169c43ca9b8acd5808"
+  },
+  {
+    "path": "ANALYSIS_PLAN.json",
+    "bytes": 4958,
+    "sha256": "0f1d659ee3cf1e145d3b05f06c54270aa78ed3ab7e0f08dffe001feb4e244b2c"
+  },
+  {
+    "path": "AllEpithelium_PC.py",
+    "bytes": 1140,
+    "sha256": "238463cd81181e8c66b123a44e85500fa8593e283eb4e450bec19d92092cf417"
+  },
+  {
+    "path": "INPUT_ARCHIVE.json",
+    "bytes": 366,
+    "sha256": "d3b75d5e10bc0dcdb14d97cdcb29c11c60a982cce7666cec87e9d6114a20c1e7"
+  },
+  {
+    "path": "INPUT_MANIFEST.json",
+    "bytes": 1057,
+    "sha256": "8b5d49d572e55ba7fef7774b445958d19c2bc6d509a9128432b75452c41d6b86"
+  },
+  {
+    "path": "PC_ACCEPTANCE_RECEIPT.json",
+    "bytes": 2252,
+    "sha256": "7cae6b1d4445b4de604111a81fc76a2d70f538a5dcd86d628614766dd91452f3"
+  },
+  {
+    "path": "README.md",
+    "bytes": 2561,
+    "sha256": "37b8e72674a98938f0a5d865d414521dc05c022d4735ebe6c54d5911631a7d08"
+  },
+  {
+    "path": "REFERENCE_FIGURE_REQUIREMENTS.md",
+    "bytes": 2786,
+    "sha256": "4eb6d1c549074d4748486cdc1a921614f0dbe249030a6a248e6964d37217992f"
+  },
+  {
+    "path": "RETURN_PROTOCOL.md",
+    "bytes": 1428,
+    "sha256": "1469588bdac42cc617d6f74c2e098b487dd0a772979e5be6153d6abfd8340d57"
+  },
+  {
+    "path": "RUN_ON_PC.md",
+    "bytes": 2011,
+    "sha256": "b2db56cc45b8c9c1b2ed861560d7081a310ac0b5e0fac4ee9ef63a39d7c13d09"
+  },
+  {
+    "path": "SOURCE_TISSUE_AUDIT.md",
+    "bytes": 4262,
+    "sha256": "e888d9661d0a018575cccccf13b93bf51d8f6c411954c028e7413f339239427c"
+  },
+  {
+    "path": "TASK_SPEC.md",
+    "bytes": 7945,
+    "sha256": "a62aecac73733a822fa39a128e5346b2410d0663b77d2a7d00658b2ce05e5d19"
+  },
+  {
+    "path": "WORK_MANIFEST.json",
+    "bytes": 1206,
+    "sha256": "3a99f59f881ee783657535f96dd751c349052f0d444ad7e67c5090ea8c066a4a"
+  },
+  {
+    "path": "config.json",
+    "bytes": 1306,
+    "sha256": "a2386c47d81a459d524d0779e178c0758589eacb5d5c9754af9d08d748f7a853"
+  },
+  {
+    "path": "prior_specimen_source_audit.csv",
+    "bytes": 17915,
+    "sha256": "71b626ffe5e42c051ae27d293ea87a0b394814182e353943c70b17a4c93542e8"
+  },
+  {
+    "path": "scope_summary.json",
+    "bytes": 1083,
+    "sha256": "7b60f17c1ee7a3f77d7300dcd519d553e3c62ad0c58d6fd25327eb678f93174a"
+  },
+  {
+    "path": "tissue_source_audit.csv",
+    "bytes": 895,
+    "sha256": "3faf14b2bd6dbb649c393f342cac7e9650eed5f445f148e9300f82fde43ad9fa"
+  },
+  {
+    "path": "work/analysis_request.json",
+    "bytes": 1542,
+    "sha256": "3fddf76c9433efc9f12928c49ed78b84ae3bbdeab67e43db63b1099f648b7395"
+  },
+  {
+    "path": "work/fit_generated.R",
+    "bytes": 22572,
+    "sha256": "dee78e55831a77d354aa49f163307a0c902d3fecbd83d77b5c2ed35381050d0e"
+  },
+  {
+    "path": "work/preparation_summary.json",
+    "bytes": 739,
+    "sha256": "e90f39f4369d9eea3e4fecbdbeb1065323f2acac53635cb01af802fc2a2a509f"
+  }
+]

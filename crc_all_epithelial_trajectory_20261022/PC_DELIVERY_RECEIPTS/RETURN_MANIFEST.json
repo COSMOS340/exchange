@@ -1,0 +1,40 @@
+{
+  "label": "pc-all-epithelial-results-v1-20261022",
+  "code_commit": "c25fa02d6b89a33609e548b7db04069d1fc523b8",
+  "archive_bytes": 6835510263,
+  "archive_sha256": "5bb3dce1e66e347cd6448f19e8c6bc0456d9e35773c5b82c388b7a73a84f0ffb",
+  "assets": [
+    {
+      "name": "results.zip.part001",
+      "bytes": 1610612736,
+      "sha256": "a4b21cff1af9f22b6bb7eae8da96e1058ade4935f3c5d2477a4131821fdeb087"
+    },
+    {
+      "name": "results.zip.part002",
+      "bytes": 1610612736,
+      "sha256": "ebe2f9d35b4c9d34cf4df4287ab76048b17a913292679fc75cb350d75f706432"
+    },
+    {
+      "name": "results.zip.part003",
+      "bytes": 1610612736,
+      "sha256": "36244c2546928dffda1a597492d0b5d155cc8b53caa2879426af3882dfe85c07"
+    },
+    {
+      "name": "results.zip.part004",
+      "bytes": 1610612736,
+      "sha256": "efaaedbeefcb3efa4a8c60f911df74ff64dd15df6f305841a684513b7e144c81"
+    },
+    {
+      "name": "results.zip.part005",
+      "bytes": 393059319,
+      "sha256": "6a0efa3b35f525e8b10d5bc6aad524167602183558e0477e5f0d1b5b97e6a4d0"
+    }
+  ],
+  "transfer_splitting_only": true,
+  "all_measured_cells": 223736,
+  "original_input_archive_reuploaded": false,
+  "scientific_acceptance": "PC numeric and actual visual checks passed; separate Mac receiving acceptance remains pending",
+  "exclusions": [
+    "Recomputable __pycache__/pyc/pyo and .DS_Store only; raw input and environment were never in results"
+  ]
+}

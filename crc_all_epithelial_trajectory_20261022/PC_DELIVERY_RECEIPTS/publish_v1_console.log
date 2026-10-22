@@ -1,0 +1,29 @@
+remote: 
+remote: Create a pull request for 'pc-all-epithelial-results-20261022' on GitHub by visiting:        
+remote:      https://github.com/COSMOS340/exchange/pull/new/pc-all-epithelial-results-20261022        
+remote: 
+To https://github.com/COSMOS340/exchange.git
+ * [new branch]      pc-all-epithelial-results-20261022 -> pc-all-epithelial-results-20261022
+https://github.com/COSMOS340/exchange/releases/tag/untagged-7298246d32c08eb99fbf
+gh: Not Found (HTTP 404)
+Traceback (most recent call last):
+  File "/home/anran/hehe/exchange-all-epithelial-20261022/crc_all_epithelial_trajectory_20261022/results/code/publish_new_release.py", line 103, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/anran/hehe/exchange-all-epithelial-20261022/crc_all_epithelial_trajectory_20261022/results/code/publish_new_release.py", line 64, in main
+    release=api(f'repos/{REPO}/releases/tags/{args.tag}')
+  File "/home/anran/hehe/exchange-all-epithelial-20261022/crc_all_epithelial_trajectory_20261022/results/code/publish_new_release.py", line 18, in api
+    def api(endpoint):return json.loads(run(['gh','api',endpoint]))
+                                        ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anran/hehe/exchange-all-epithelial-20261022/crc_all_epithelial_trajectory_20261022/results/code/publish_new_release.py", line 15, in run
+    return subprocess.check_output(command,text=True).strip()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/anran/hehe/exchange/crc_monocle2_20261021/.venv/lib/python3.13/subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/home/anran/hehe/exchange/crc_monocle2_20261021/.venv/lib/python3.13/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['gh', 'api', 'repos/COSMOS340/exchange/releases/tags/crc-all-epithelial-trajectory-results-v1-20261022']' returned non-zero exit status 1.
