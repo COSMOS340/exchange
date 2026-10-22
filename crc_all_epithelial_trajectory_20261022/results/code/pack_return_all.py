@@ -28,10 +28,13 @@ def pack_return(label):
     extras.update(p for p in ROOT.glob('*') if p.is_file() and p.suffix in ['.csv','.tsv','.json'])
     extras.update(p for p in (ROOT/'work').glob('*.json') if p.is_file())
     extras.add(ROOT/'work/fit_generated.R')
+    sidecars=[dict(path=p.relative_to(ROOT).as_posix(),bytes=p.stat().st_size,sha256=digest(p)) for p in sorted(extras)]
+    save_json(target/'SIDECAR_MANIFEST.json',sidecars)
     with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=1,allowZip64=True) as zipped:
         for p in files:zipped.write(p,p.relative_to(ROOT).as_posix())
         for p in sorted(extras):zipped.write(p,p.relative_to(ROOT).as_posix())
         zipped.write(target/'RESULT_MANIFEST.json','RESULT_MANIFEST.json')
+        zipped.write(target/'SIDECAR_MANIFEST.json','SIDECAR_MANIFEST.json')
     # Fail if any asynchronous process changed a result during packaging.
     for p,item in zip(files,manifest):assert p.stat().st_size==item['bytes'] and digest(p)==item['sha256'],item['path']
     cap=1536*1024**2;assets=[]

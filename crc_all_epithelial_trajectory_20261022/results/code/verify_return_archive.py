@@ -35,6 +35,10 @@ def main():
     with zipfile.ZipFile(archive) as zipped:
         names=zipped.namelist();assert len(names)==len(set(names))
         assert json.loads(zipped.read('RESULT_MANIFEST.json'))==expected
+        sidecars=json.loads(zipped.read('SIDECAR_MANIFEST.json'))
+        assert sidecars==json.loads((folder/'SIDECAR_MANIFEST.json').read_text())
+        side_map={r['path']:r for r in sidecars}
+        assert {name for name in names if not name.startswith('results/')}==set(side_map)|{'RESULT_MANIFEST.json','SIDECAR_MANIFEST.json'}
         assert {name for name in names if name.startswith('results/')}==set(mapped)
         for info in zipped.infolist():
             path=PurePosixPath(info.filename)
@@ -49,11 +53,15 @@ def main():
                 item=mapped[info.filename]
                 assert size==item['bytes'] and checksum.hexdigest()==item['sha256']
                 count+=1;bytes_checked+=size
+            if info.filename in side_map:
+                item=side_map[info.filename]
+                assert size==item['bytes'] and checksum.hexdigest()==item['sha256']
     assert count==len(expected)
     report=dict(passed=True,archive_sha256=returned['archive_sha256'],
         archive_bytes=returned['archive_bytes'],transport_assets=len(returned['assets']),
         concatenated_transport_hash_matches=True,all_zip_member_CRCs_verified=True,
         result_files_verified=count,result_bytes_verified=bytes_checked,
+        all_sidecar_files_verified=len(sidecars),
         scientific_acceptance='Separate: inspect numeric_acceptance.json and visual_audit.json')
     (folder/'LOCAL_TRANSPORT_VERIFICATION.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))

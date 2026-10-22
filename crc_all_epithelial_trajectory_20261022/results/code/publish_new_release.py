@@ -31,7 +31,7 @@ def main():
     branch=run(['git','branch','--show-current']);assert branch=='pc-all-epithelial-results-20261022'
     assert args.notes_file.is_file()
     paths=[folder/x['name'] for x in returned['assets']]
-    paths += [folder/'RESULT_MANIFEST.json',folder/'RETURN_MANIFEST.json',folder/'LOCAL_TRANSPORT_VERIFICATION.json',ROOT/'results/RUN_SUMMARY.md']
+    paths += [folder/'RESULT_MANIFEST.json',folder/'SIDECAR_MANIFEST.json',folder/'RETURN_MANIFEST.json',folder/'LOCAL_TRANSPORT_VERIFICATION.json',ROOT/'results/RUN_SUMMARY.md']
     expected=[dict(name=p.name,bytes=p.stat().st_size,sha256=digest(p)) for p in paths]
     assert len({r['name'] for r in expected})==len(expected)
     assert all(r['bytes']<2*1024**3 for r in expected)
