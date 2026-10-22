@@ -52,13 +52,15 @@ def main():
         expected_ari=ari(partition.fixed_primary_module,partition.leaveout_fixed_k_label)
         assert abs(expected_ari-record.primary_genes_partition_ARI)<1e-12
         normalized=curve[support][:,baseline.selected].T
-        normalized=(normalized-normalized.mean(axis=1)[:,None])/normalized.std(axis=1)[:,None]
+        centered=normalized-normalized.mean(axis=1)[:,None];sd=normalized.std(axis=1)[:,None]
+        normalized=np.divide(centered,sd,out=np.zeros_like(centered),where=sd>1e-12)
+        assert record.flat_primary_module_members_encoded_as_zero_profile==int((sd<=1e-12).sum())
         # Every final member is assigned to a nearest fitted centroid in leaveout profile space.
         labels=partition.leaveout_fixed_k_label.to_numpy();centers=np.array([normalized[labels==c].mean(axis=0) for c in range(labels.max()+1)])
         distance=cdist(normalized,centers,metric='sqeuclidean')
         assert np.all(distance[np.arange(len(labels)),labels]<=distance.min(axis=1)+1e-7)
         reports.append(dict(excluded_dataset=record.excluded_dataset,genes=len(table),specimens=len(units),
-            all_five_time_coefficients_max_error=float(np.max(np.abs(expected-actual))),all_amplitudes_and_partition_ARI_checked=True))
+            all_five_time_coefficients_max_error=float(np.max(np.abs(expected-actual))),flat_primary_members=int((sd<=1e-12).sum()),all_amplitudes_and_partition_ARI_checked=True))
         print('Independent leaveout coefficients',record.excluded_dataset,flush=True)
     root=pd.read_csv(sensitivity/'root_gene_selection_comparison.csv.gz')
     report=json.loads((LOG/'dynamic_sensitivity_summary.json').read_text())

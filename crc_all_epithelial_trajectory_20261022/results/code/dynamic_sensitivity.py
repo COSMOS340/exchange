@@ -86,16 +86,18 @@ def main():
             stats,model=statistics_for(subset,y[use],coverage,genes,detection,30)
             stats.to_csv(dest/'all_gene_statistics.csv.gz',index=False);coverage.to_csv(dest/'bin_coverage.csv',index=False)
             supported=coverage.supported.to_numpy();curves=model['curves_with_support']
+            flat_primary_members=int((curves[supported][:,a.selected].std(axis=0)<=1e-12).sum())
             z=standardize_profiles(curves[supported][:,a.selected].T)
             fit=cluster_all_profiles(z,k,20261024+index)
             pd.DataFrame(dict(gene=a.loc[a.selected,'gene'],fixed_primary_module=a.loc[a.selected,'module'],
                 leaveout_fixed_k_label=fit['labels'])).to_csv(dest/'primary_gene_partition.csv',index=False)
             for module,d in a[a.selected].groupby('module'):
                 standardized=standardize_profiles(curves[supported][:,d.index].T).mean(axis=0)
-                for b,value in zip(np.flatnonzero(supported),standardized):profiles.append(dict(excluded_dataset=dataset,module=module,bin=int(b),mean_gene_Z=float(value)))
+                flat_members=int((curves[supported][:,d.index].std(axis=0)<=1e-12).sum())
+                for b,value in zip(np.flatnonzero(supported),standardized):profiles.append(dict(excluded_dataset=dataset,module=module,bin=int(b),mean_gene_Z=float(value),fixed_primary_members=len(d),flat_members_encoded_as_zero_profile=flat_members))
             selected=set(stats.loc[stats.selected,'gene'])
             loo.append(dict(excluded_dataset=dataset,status='assessed',observations=model['observations'],specimens=model['specimens'],clusters=model['linkage_clusters'],
-                supported_bins=int(supported.sum()),selected_genes=len(selected),intersection_primary=len(pset&selected),
+                supported_bins=int(supported.sum()),tested_genes=int(stats.tested.sum()),selected_genes=len(selected),intersection_primary=len(pset&selected),flat_primary_module_members_encoded_as_zero_profile=flat_primary_members,
                 selection_Jaccard=len(pset&selected)/len(pset|selected),primary_genes_partition_ARI=adjusted_rand(baseline_labels,fit['labels'])))
         except (ValueError,np.linalg.LinAlgError) as e:
             save_json(dest/'unassessable.json',dict(excluded_dataset=dataset,status='unassessable',reason=str(e)))

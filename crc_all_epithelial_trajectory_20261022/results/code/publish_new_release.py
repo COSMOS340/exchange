@@ -18,6 +18,15 @@ def run(command):
 def api(endpoint):return json.loads(run(['gh','api',endpoint]))
 
 
+def check_tag_if_present(tag,commit,require_absent=False):
+    response=subprocess.run(['gh','api',f'repos/{REPO}/git/ref/tags/{tag}'],capture_output=True,text=True)
+    if response.returncode:
+        if '404' in response.stderr:return
+        raise RuntimeError('Unable to check tag without changing it: '+response.stderr)
+    if require_absent:raise RuntimeError('Tag already exists; choose a new version without overwriting it')
+    assert api(f'repos/{REPO}/commits/{tag}')['sha']==commit,'An existing tag points to another commit; do not publish'
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('folder',type=Path)
     parser.add_argument('--tag',required=True);parser.add_argument('--notes-file',type=Path,required=True)
@@ -48,6 +57,7 @@ def main():
         releases=api(f'repos/{REPO}/releases?per_page=100')
         if args.tag in {x['tag_name'] for x in releases}:
             raise RuntimeError('Tag already exists: choose the next unused version; never overwrite it')
+        check_tag_if_present(args.tag,commit,require_absent=True)
         subprocess.run(['gh','release','create',args.tag,'--repo',REPO,'--target',commit,'--draft',
             '--title','All epithelial trajectory | 223,736 cells | PC results',
             '--notes-file',str(args.notes_file)],check=True)
@@ -74,6 +84,7 @@ def main():
         save_json(state_file,state);print('Remote SHA verified',record['name'],flush=True)
     release=api(f'repos/{REPO}/releases/{state["release_id"]}')
     assert {a['name'] for a in release['assets']}=={r['name'] for r in expected}
+    check_tag_if_present(args.tag,commit)
     if release['draft']:
         subprocess.run(['gh','release','edit',args.tag,'--repo',REPO,'--draft=false'],check=True)
     release=api(f'repos/{REPO}/releases/tags/{args.tag}')
