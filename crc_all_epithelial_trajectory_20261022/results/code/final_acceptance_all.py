@@ -47,6 +47,23 @@ def visual_acceptance():
     assert any(r['name'].startswith('50_') for r in verified),'Module method sensitivity figure review still missing'
     assert any(r['name'].startswith('34_') for r in verified),'All-cohort module sensitivity figure review still missing'
     assert any(r['name'].endswith('supported_labels') for r in verified),'Path activity figure review still missing'
+    # Synchronize status only after explicit observations for ALL current files
+    # have passed the checks above. Rendering/file presence is not an attestation.
+    for path in sorted(LOG.glob('*manifest.json')):
+        value=json.loads(path.read_text())
+        if not isinstance(value,list):continue
+        changed=False
+        for row in value:
+            if not isinstance(row,dict) or not {'name','png','pdf'}<=set(row):continue
+            observation=observations[row['name']]
+            row.update(visual_review='passed_actual_opening_and_SHA_verified',
+                actual_visual_observation=observation['observation'],
+                png_sha256=observation['png_sha256'],pdf_sha256=observation['pdf_sha256'])
+            if 'Pending' in str(row.get('finding','')) or not row.get('finding'):row['finding']=observation['observation']
+            changed=True
+        if changed:save_json(path,value)
+    for page in pages:page['visual_review']='passed_actual_page_opening_and_source_SHA_verified'
+    save_json(LOG/'pdf_page_manifest.json',pages)
     save_json(LOG/'visual_audit.json',dict(passed=True,formal_PNGs=len(pngs),formal_PDFs=len(pdfs),PDF_pages=len(pages),
         actual_per_file_observations_not_inferred_from_rendering=True,figures=verified))
     return records,observations

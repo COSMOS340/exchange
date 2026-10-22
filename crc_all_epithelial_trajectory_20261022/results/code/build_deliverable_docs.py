@@ -24,6 +24,20 @@ def question(name):
 
 
 def encoding(name):
+    tree='横纵轴为同一全量DDRTree 1/2坐标，黑线为同一中心树。'
+    if name=='01_Monocle2_CNV_groups':return tree+'蓝/灰/红分别为冻结Low/Intermediate/High相对RNA CNV分组；这些不是正常/恶性标签。'
+    if name=='02_Monocle2_PT_continuous_CNV':return tree+'左面板连续色条为主根加权树距离（与替代根使用共同PT范围），右面板为未裁剪的原连续相对RNA CNV（mean absolute log2）；两者颜色单位不同。'
+    if name=='03_Monocle2_CNV_facets':return tree+'三面板依次突出冻结Low/Intermediate/High；灰点保留其余全池细胞背景，每面板范围相同。'
+    if name=='04_Monocle2_State':return tree+'颜色区分本次Monocle2的7个State树区段，图例列出计数；编号不是组织、宽身份或跨拟合通用编号。'
+    if name=='05_Monocle2_coarse_state':return tree+'颜色为继承的17个coarse_state标签（按图例）；这不是重新聚类或本次原生State。'
+    if name=='06_Monocle2_broad_identity':return tree+'颜色为继承的6种宽上皮身份，图例包含完整名称和计数；身份差异不等于细胞沿树发生转化。'
+    if name=='07_Monocle2_dataset':return tree+'颜色为8个来源队列，图例标示各队列全池细胞数；局部队列聚集需与来源/身份组成一起解释。'
+    if name=='08_Monocle2_Phase':return tree+'颜色为继承G1/S/G2M细胞周期标签，图例为各类细胞计数；属于周期组成对照。'
+    if name=='11_cohort_CNV_facets':return tree+'8队列分面共用完整灰背景和相同范围；蓝/灰/红突出该队列的冻结CNV三组，面板标题列出队列和n。'
+    if name=='20_tissue_source_facets':return tree+'左面板显示全部细胞，右两面板分别突出绿色Normal_colorectal和紫色Primary_CRC。正常来源包含未明确距离正常及明确癌旁；其余全池细胞为灰背景。'
+    if name=='21_tissue_source_facets':return tree+'左面板为全池，后三面板分别突出绿色Normal、橙色Adjacent、紫色CRC；所有面板保留同一全池背景和范围，不是三次拟合。'
+    if name=='22_source_by_cohort':return tree+'8队列分面按绿色Normal、橙色Adjacent、紫色CRC着色，灰色为其他队列的完整背景；Adjacent只见于GSE245552。'
+    if name=='23_shared_identity_sources':return tree+'6个达到共享来源显示资格的宽身份分面，按绿色Normal、橙色Adjacent、紫色CRC着色，灰点为该身份以外全池背景。资格不代表每个时间箱都有充足比较覆盖。'
     if 'heatmap' in name or '_zoom' in name:
         return '横轴为主根30箱相对拟时序；纵轴为全部选中基因，白线分模块。红/蓝为逐基因调整样条Z（±2.5仅显示限幅），灰列为不足覆盖；上方五条为capture→specimen等权组成，右侧为代表基因及GO/BH q。'
     if name.startswith('50_'):
