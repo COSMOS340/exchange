@@ -3,7 +3,7 @@ suppressPackageStartupMessages({library(slingshot);library(igraph);library(data.
 root=normalizePath(commandArgs(TRUE)[1]);tab=file.path(root,'results/02_表格/AllEpithelial');log=file.path(root,'results/04_日志和检查')
 m=as.data.frame(fread(file.path(root,'work/AllEpithelial/metadata.csv.gz')))
 h=as.matrix(fread(file.path(root,'work/AllEpithelial/Harmony.csv'),header=TRUE));rownames(h)=m$cell_id
-cfg=fromJSON(file.path(root,'work/analysis_request.json'))
+actual_references=fromJSON(file.path(tab,'Slingshot_actual_Monocle2_reference_groups.json'))
 checks=list()
 for(orientation in c('primary','alternative')){
   s=readRDS(file.path(root,'results/03_对象/AllEpithelial',paste0('Slingshot_',orientation,'.rds')))
@@ -34,7 +34,7 @@ for(orientation in c('primary','alternative')){
     curve_error=max(curve_error,max(abs(expected-actual)))
   }
   stopifnot(curve_error<1e-8)
-  requested=if(orientation=='primary')cfg$blocks$root[1] else cfg$blocks$alternative[1]
+  requested=actual_references[[orientation]]
   lineages=slingLineages(s);stopifnot(all(vapply(lineages,function(x)x[1]==requested,logical(1))))
   checks[[orientation]]=list(cells=nrow(pt),dimensions=ncol(z),requested_root=requested,
     paths=ncol(pt),assigned_cells=sum(rowSums(is.finite(pt))>0),unassigned_cells=sum(rowSums(is.finite(pt))==0),

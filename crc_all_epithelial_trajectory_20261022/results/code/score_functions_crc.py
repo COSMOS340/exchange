@@ -80,7 +80,7 @@ def main():
         block[:, ~np.array(valid_sets)] = np.nan
         scores[lo:hi] = block
         if lo == 0:
-            # Fixed-row arithmetic QA only; all 150,917 cells were scored.
+            # Fixed-row arithmetic QA only; all 223,736 cells were scored.
             dense = np.log1p(x[:30, indices].toarray() * (1e4 / metadata.nCount_input.iloc[:30].to_numpy())[:, None])
             for j, valid in enumerate(valid_sets):
                 if valid:
