@@ -56,6 +56,7 @@ def main():
     spec_codes, specimens = pd.factorize(m.specimen_id, sort=False)
     detected_per_specimen = np.zeros((len(specimens), len(genes)), dtype=float)
     detected = np.zeros(len(genes), dtype=np.int64)
+    log_sum, log_square = np.zeros(len(genes)), np.zeros(len(genes))
     with h5py.File(ROOT / 'work' / BLOCK / 'counts.h5') as h:
         ptr = h['indptr'][:]
         for lo in range(0, CELLS, 2000):
@@ -71,6 +72,8 @@ def main():
             add_grouped(detected_per_specimen, spec_codes[lo:hi], positive)
             values = x.multiply((1e4/m.nCount_input.iloc[lo:hi].to_numpy())[:, None]).tocsr()
             values.data = np.log1p(values.data)
+            log_sum += np.asarray(values.sum(axis=0)).ravel()
+            log_square += np.asarray(values.power(2).sum(axis=0)).ravel()
             for layout in layouts.values():
                 add_grouped(layout['sums'], layout['codes'][lo:hi], values)
             if lo % 20000 == 0:
@@ -81,6 +84,10 @@ def main():
         specimens_with_at_least_5_positive_cells=(detected_per_specimen>=5).sum(axis=0)))
     coverage['detection_eligible'] = coverage.detected_cell_fraction.ge(.01) & coverage.specimens_with_at_least_5_positive_cells.ge(10)
     coverage.to_csv(folder / 'dynamic_gene_detection_coverage.csv', index=False)
+    population_mean = log_sum / CELLS
+    population_sd = np.sqrt(np.maximum(0,log_square/CELLS-population_mean**2))
+    pd.DataFrame(dict(gene=genes.gene,mean_log1p_CP10K=population_mean,
+        population_sd=population_sd)).to_csv(folder/'all_gene_expression_standardization.csv',index=False)
     results = {}
     for root, layout in layouts.items():
         groups = layout['groups']

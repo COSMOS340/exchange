@@ -2,6 +2,7 @@
 import csv
 import gzip
 import json
+import shutil
 from collections import defaultdict
 
 import pandas as pd
@@ -80,13 +81,16 @@ def main():
     mapping.to_csv(output/'measured_gene_symbol_mapping.csv',index=False)
     terms,aliases,ancestors,version=read_ontology(folder/'go-basic.obo')
     direct=defaultdict(set);counts=defaultdict(int)
-    with gzip.open(folder/'gene2go.gz','rt') as f:
+    raw_subset=output/'human_measured_gene2go_original_rows.tsv.gz'
+    with gzip.open(folder/'gene2go.gz','rt') as f,gzip.open(raw_subset,'wt') as saved:
+        saved.write('#tax_id\tGeneID\tGO_ID\tEvidence\tQualifier\tGO_term\tPubMed\tCategory\n')
         for line in f:
             if not line.startswith('9606\t'):continue
             values=line.rstrip('\r\n').split('\t')
             counts['human_rows']+=1
             _,identifier,go,evidence,qualifier,term,pubmed,category=values
             if identifier not in ids:continue
+            saved.write(line)
             counts['measured_mapped_rows']+=1
             if 'NOT' in qualifier.split('|') or evidence=='ND' or category!='Process':
                 counts['excluded_NOT_ND_or_non_BP']+=1;continue
@@ -103,10 +107,14 @@ def main():
     pd.DataFrame([dict(GO_ID=t,name=d['name'],parents=';'.join(d['parents']),
                        ancestors=';'.join(sorted(ancestors[t]))) for t,d in terms.items()]).to_csv(
         output/'GO_BP_terms_and_ancestors.csv.gz',index=False)
+    with (folder/'go-basic.obo').open('rb') as source,gzip.open(output/'go-basic_original.obo.gz','wb') as saved:
+        shutil.copyfileobj(source,saved)
     save_json(output/'GO_snapshot_provenance.json',dict(passed=True,ontology_version=version,
         input_gene_count=len(genes),mapping_status=mapping.status.value_counts().to_dict(),
         mapped_GeneIDs=len(ids),BP_annotated_GeneIDs=len(direct),BP_terms=len(terms),counts=dict(counts),
         source_download_manifest_sha256=digest(LOG/'GO_source_downloads.json'),
+        complete_measured_gene_annotation_rows_preserved=True,
+        original_ontology_saved_compressed=True,
         positive_propagation_relations=['is_a','part_of'],NOT_ND_excluded=True,
         documentation=downloads['sources_documentation'],
         citation_and_license='https://www.geneontology.org/docs/go-citation-policy/'))
