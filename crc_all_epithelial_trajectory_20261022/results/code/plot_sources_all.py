@@ -1,5 +1,6 @@
 """Full-cell tissue plots and unit-equal source profiles on one saved tree."""
 import json
+import argparse
 import textwrap
 import matplotlib
 matplotlib.use('Agg')
@@ -15,6 +16,9 @@ SOURCE_COLORS={'Normal':'#379582','Adjacent':'#E5B04A','CRC':'#8060A8',
 
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--only',nargs='*')
+    args=parser.parse_args()
     m=pd.read_csv(ROOT/'work'/BLOCK/'metadata.csv.gz',low_memory=False)
     cells=pd.read_csv(TAB/'Monocle2_primary_cells.csv.gz')
     assert len(m)==CELLS and np.array_equal(m.cell_id,cells.cell_id)
@@ -48,20 +52,25 @@ def main():
         fig.legend(handles=handles,loc='outside lower center',ncol=len(levels),frameon=False)
     def save(fig,name,question,sources,unit):
         fig.canvas.draw();fig.set_layout_engine('none')
-        fig.savefig(out/(name+'.png'),dpi=180,bbox_inches='tight')
-        fig.savefig(out/(name+'.pdf'),dpi=180,bbox_inches='tight');plt.close(fig)
+        if not args.only or name in args.only:
+            fig.savefig(out/(name+'.png'),dpi=180,bbox_inches='tight')
+            fig.savefig(out/(name+'.pdf'),dpi=180,bbox_inches='tight')
+        else:
+            assert (out/(name+'.png')).exists() and (out/(name+'.pdf')).exists()
+        plt.close(fig)
         manifest.append(dict(name=name,png='01_图形/source/'+name+'.png',pdf='01_图形/source/'+name+'.pdf',
             question=question,sources=sources,statistical_unit=unit,fitted_cells=CELLS,
             finding='Pending actual figure inspection',visual_review='pending'))
     for number,field,levels in [(20,'tissue_group',['Normal_colorectal','Primary_CRC']),
                                 (21,'display_3class',['Normal','Adjacent','CRC'])]:
-        fig,axes=plt.subplots(1,len(levels)+1,figsize=(5*(len(levels)+1),6),layout='constrained')
+        fig,axes=plt.subplots(1,len(levels)+1,figsize=(5*(len(levels)+1),4.7),layout='constrained')
         points(axes[0],field,'All 223,736 epithelial cells')
         for ax,level in zip(axes[1:],levels):
             keep=m[field].eq(level)
             points(ax,field,level+' | n='+format(int(keep.sum()),','),keep)
         legend(fig,levels)
-        fig.suptitle('Frozen tissue sources | one common expression tree\nNormal indicates unspecified sampling distance, not healthy donors',fontsize=11)
+        subtitle=('Normal_colorectal includes unspecified-distance normal and explicitly adjacent tissue; no healthy-donor category' if number==20 else 'Normal = unspecified-distance normal; Adjacent = explicitly adjacent; no healthy-donor category')
+        fig.suptitle('Frozen tissue sources | one common expression tree\n'+subtitle,fontsize=11)
         save(fig,str(number)+'_tissue_source_facets','组织来源在完全相同的共同树上如何分布？',
              ['02_表格/AllEpithelial/source_mapping_all_cells.csv.gz','02_表格/AllEpithelial/Monocle2_primary_cells.csv.gz'],'All cells; display only, no tissue-based refit')
     cohorts=sorted(m.dataset.unique())
@@ -108,7 +117,11 @@ def main():
                 x=(d.bin.to_numpy()+.5)/30
                 ax.plot(x,d['mean'],color=SOURCE_COLORS[source],lw=1.3,label=source)
                 ax.fill_between(x,d.q25,d.q75,color=SOURCE_COLORS[source],alpha=.15)
-            ax.set(title=root+' | '+textwrap.fill(identity,36),xlabel='Scaled pseudotime',ylabel='Relative RNA CNV\nmean absolute log2')
+            ax.set(title=root+' | '+textwrap.fill(identity,36),xlabel='Scaled pseudotime',ylabel='Relative RNA CNV\nmean absolute log2',xlim=(0,1))
+    for row in range(len(identities)):
+        bounds=[ax.get_ylim() for ax in axes[row]]
+        common=(min(x[0] for x in bounds),max(x[1] for x in bounds))
+        for ax in axes[row]:ax.set_ylim(common)
     legend(fig,['Normal','Adjacent','CRC'])
     fig.suptitle('Equal capture -> specimen CNV profiles | mean / between-specimen IQR\nBins require >=3 specimens; Adjacent is confounded with GSE245552. IQR is not a confidence interval.',fontsize=11)
     save(fig,'26_source_CNV_within_shared_identities','共同轨迹的CNV差异在共享身份和来源内是否仍出现？',

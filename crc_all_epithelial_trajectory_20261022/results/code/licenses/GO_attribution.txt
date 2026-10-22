@@ -1,0 +1,7 @@
+Gene Ontology Consortium; ontology data release 2026-07-26.
+Copyright 1999-2026 Gene Ontology Consortium. Licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Provided as-is, without warranty. Official source: https://current.geneontology.org/ontology/go-basic.obo
+Terms are linked by their persistent GO IDs. Frozen ontology and human NCBI annotation subsets are included with source SHA256.
+Citation policy: https://www.geneontology.org/docs/go-citation-policy/
+Original publication DOI: https://doi.org/10.1038/75556
+GO knowledgebase update DOI: https://doi.org/10.1093/nar/gkaf1292

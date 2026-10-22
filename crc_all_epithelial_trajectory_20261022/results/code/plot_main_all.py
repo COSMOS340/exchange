@@ -212,7 +212,13 @@ def main():
 
     fig, axes = plt.subplots(1, 3, figsize=(18, 4.8), layout="constrained", gridspec_kw={"width_ratios": [1.2, 1.2, 1]})
     for ax, data, orientation in zip(axes[:2], [main_cells, alt_cells], ["primary", "alternative"]):
-        numeric(fig, ax, data.PT_1, f"{orientation}: requested {roots[orientation]['requested_root_group']}", "Pseudotime (a.u.)", domain=pt_domain)
+        record=roots[orientation]
+        title=f"{orientation}: requested State {record['requested_State']}\nActual root cell: {record['actual_root_group']} / State {record['actual_root_State']}"
+        numeric(fig, ax, data.PT_1, title, "Pseudotime (a.u.)", domain=pt_domain)
+        root_index=np.flatnonzero(metadata.cell_id.eq(record["actual_root_cell"]).to_numpy())
+        assert len(root_index)==1
+        ax.scatter(*xy[root_index[0]],marker="*",s=65,color="black",edgecolor="white",linewidth=.5,zorder=5,label="Actual root cell")
+        ax.legend(loc="upper left",fontsize=7,frameon=False)
     axes[2].scatter(main_cells.PT_1, alt_cells.PT_1, s=.6, marker="o", linewidths=0,
                     c=metadata.CNV_relative_band.map(COLORS), rasterized=True)
     same = roots["primary"]["actual_root_cell"] == roots["alternative"]["actual_root_cell"]

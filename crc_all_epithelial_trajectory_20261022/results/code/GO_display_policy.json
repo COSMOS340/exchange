@@ -1,0 +1,13 @@
+{
+  "created_before_enrichment": true,
+  "display_q": 0.05,
+  "max_terms_per_module": 3,
+  "exclude_root_terms": [
+    "GO:0008150"
+  ],
+  "minimum_background_hits": 10,
+  "maximum_background_hits": 500,
+  "minimum_module_hits": 3,
+  "redundancy": "Ancestor/descendant or hit GeneID Jaccard >=0.5, greedy BH then P then GO_ID",
+  "statistical_tests_and_gene_module_selection_unchanged": true
+}
